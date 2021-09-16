@@ -6,11 +6,15 @@ public class SelectedRecipe {
     private int desiredServings;
 
     public SelectedRecipe(Recipe recipe, int desiredServings) {
-        this.recipe = recipe;
+        this.recipe = recipe; //updatedRecipe(recipe);
         this.desiredServings = desiredServings;
     }
 
     public SelectedRecipe(){}
+
+//    public Recipe updatedRecipe(Recipe recipe){
+//        recipe.getIngredients();
+//    }
 
     public Recipe getRecipe() {
         return recipe;
