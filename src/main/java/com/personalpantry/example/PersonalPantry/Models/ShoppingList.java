@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 public class ShoppingList {
 
-    private ArrayList<Recipe> recipeList;
+    private ArrayList<SelectedRecipe> recipeList;
     private HashMap<Ingredient, Integer> ingredientList;
 
     public ShoppingList() {
@@ -15,11 +15,11 @@ public class ShoppingList {
 
 //    public ShoppingList(){};
 
-    public ArrayList<Recipe> getRecipeList() {
+    public ArrayList<SelectedRecipe> getRecipeList() {
         return recipeList;
     }
 
-    public void setRecipeList(ArrayList<Recipe> recipeList) {
+    public void setRecipeList(ArrayList<SelectedRecipe> recipeList) {
         this.recipeList = recipeList;
     }
 
@@ -30,4 +30,10 @@ public class ShoppingList {
     public void setIngredientList(HashMap<Ingredient, Integer> ingredientList) {
         this.ingredientList = ingredientList;
     }
+
+    public void addRecipeToShoppingList(SelectedRecipe selectedRecipe){
+        this.recipeList.add(selectedRecipe);
+    }
+
+//    public void createShoppingList(){}
 }

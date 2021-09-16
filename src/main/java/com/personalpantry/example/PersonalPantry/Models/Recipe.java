@@ -23,6 +23,14 @@ public class Recipe {
 
     public Recipe(){};
 
+    public void addIngredientToRecipe(RecipeIngredient recipeIngredient){
+        ingredients.add(recipeIngredient);
+    }
+
+    public void addRecipeInstruction(String instructionStep){
+        instructions.add(instructionStep);
+    }
+
     public String getName() { // getter function for name
         return name;
     }
@@ -70,4 +78,6 @@ public class Recipe {
     public void setInstructions(ArrayList<String> instructions) { //setter function for instructions
         this.instructions = instructions;
     }
+
+
 }
