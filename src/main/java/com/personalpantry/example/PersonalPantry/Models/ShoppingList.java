@@ -14,28 +14,28 @@ public class ShoppingList {
         this.ingredientList = new HashMap<>();
     }
 
-//    public ShoppingList(){};
-    public void addToRecipeList(SelectedRecipe selectedRecipe){
-        recipeList.add(selectedRecipe);
-    }
-
-    public void addToIngredientList(Ingredient ingredient) {
-        // if ingredientList keyset contains ingredient name
-    if (ingredientList.containsKey(ingredient.getName()){
-        //get value linked to ingredient name key
-             Integer amount = 
-        // add new value to existing value
-        
-        // if ingredient name does not exist in keyset yet,
-        // add key and value pair to ingredientList
-    } else { ingredientList.put(ingredient.getName(), ingredient.)}
-
-
-        ingredientList.put(ingredient.getName(), ingredient.getCategory());
-    }
-    //loop through hashMap keys
-    // If key doesn't exist - .put()
-    // If key exists add new value to existing value
+////    public ShoppingList(){};
+//    public void addToRecipeList(SelectedRecipe selectedRecipe){
+//        recipeList.add(selectedRecipe);
+//    }
+//
+//    public void addToIngredientList(Ingredient ingredient) {
+//        // if ingredientList keyset contains ingredient name
+//    if (ingredientList.containsKey(ingredient.getName()){
+//        //get value linked to ingredient name key
+//             Integer amount =
+//        // add new value to existing value
+//
+//        // if ingredient name does not exist in keyset yet,
+//        // add key and value pair to ingredientList
+//    } else { ingredientList.put(ingredient.getName(), ingredient.)}
+//
+//
+//        ingredientList.put(ingredient.getName(), ingredient.getCategory());
+//    }
+//    //loop through hashMap keys
+//    // If key doesn't exist - .put()
+//    // If key exists add new value to existing value
 
 
     public ArrayList<SelectedRecipe> getRecipeList() {
