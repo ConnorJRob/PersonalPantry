@@ -78,6 +78,4 @@ public class Recipe {
     public void setInstructions(ArrayList<String> instructions) { //setter function for instructions
         this.instructions = instructions;
     }
-
-
 }

@@ -3,7 +3,7 @@ package com.personalpantry.example.PersonalPantry.Models;
 public class RecipeIngredient {
 
     private Ingredient ingredient; //establish ingredient as ingredient
-    private float measure; //establish measure variable as an integer
+    private double measure; //establish measure variable as an integer
     private boolean pickedUp; //establish pickedUp variable as a boolean
 
     //establish RecipeIngredient constructor which takes the properties required for new recipe ingredient
@@ -23,7 +23,7 @@ public class RecipeIngredient {
         this.ingredient = ingredient;
     }
 
-    public float getMeasure() { // getter function for measure
+    public double getMeasure() { // getter function for measure
         return measure;
     }
 
