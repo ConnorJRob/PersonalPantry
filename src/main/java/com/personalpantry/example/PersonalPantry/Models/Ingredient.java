@@ -10,6 +10,7 @@ import java.util.List;
 @Entity
 @Table(name = "ingredients")
 public class Ingredient {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -23,9 +24,9 @@ public class Ingredient {
     @Column(name = "unit_type")
     private UnitType unitType; //establish unitType variable as a unitType Enum
 
-    @JsonIgnoreProperties({"recipe_ingredient"})
+    @JsonIgnoreProperties({"ingredient"})
     @Cascade(org.hibernate.annotations.CascadeType.DELETE)
-    @OneToMany(mappedBy = "recipe_ingredient", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "ingredient", fetch = FetchType.LAZY)
     private List<RecipeIngredient> recipeIngredients;
 
     //establish Ingredient constructor which takes the properties required for new ingredient
@@ -60,5 +61,21 @@ public class Ingredient {
 
     public void setUnitType(UnitType unitType) { //setter function for unitType
         this.unitType = unitType;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public List<RecipeIngredient> getRecipeIngredients() {
+        return recipeIngredients;
+    }
+
+    public void setRecipeIngredients(List<RecipeIngredient> recipeIngredients) {
+        this.recipeIngredients = recipeIngredients;
     }
 }

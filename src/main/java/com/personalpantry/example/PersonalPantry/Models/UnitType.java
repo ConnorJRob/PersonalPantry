@@ -4,13 +4,13 @@ public enum UnitType {
     // each UnityType with a shorthand value.
     GRAMS("g"),
     MILLILITRES("ml"),
-    LITRES("L"),
-    TABLESPOON("tbsp"),
-    TEASPOON("tsp"),
-    LARGE("large"),
-    MEDIUM("medium"),
-    SMALL("small"),
-    BLANK("");
+    SINGLEUNIT("");
+//    LITRES("L"),
+//    TABLESPOON("tbsp"),
+//    TEASPOON("tsp"),
+//    LARGE("large"),
+//    MEDIUM("medium"),
+//    SMALL("small"),
 
     private final String measurementUnit;
 

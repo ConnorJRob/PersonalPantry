@@ -1,7 +1,9 @@
 package com.personalpantry.example.PersonalPantry.Models;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.hibernate.annotations.Cascade;
+
+import javax.persistence.*;
 
 import java.util.ArrayList;
 
@@ -9,11 +11,28 @@ import java.util.ArrayList;
 @Table(name = "recipes")
 public class Recipe {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column
     private String name; //establish name variable as a String
+
+    @Column(name = "ready_in_minutes")
     private int readyInMinutes; //establish readyInMinutes variable as Integer
+
+    @Column(name = "calories_per_serving")
     private int caloriesPerServing; //establish caloriesPerServing variable as Integer
+
+    @Column
     private String description; //establish description variable as String
-    private ArrayList<RecipeIngredient> ingredients; //establish an ArrayList variable which only takes RecipeIngredients
+
+    @JsonIgnoreProperties({"recipe"})
+    @Cascade(org.hibernate.annotations.CascadeType.DELETE)
+    @OneToMany(mappedBy = "recipe", fetch = FetchType.LAZY)
+    private ArrayList<RecipeIngredient> recipeIngredients; //establish an ArrayList variable which only takes RecipeIngredients
+
+    @Column
     private ArrayList<String> instructions; //establish an ArrayList variable which only takes Strings
 
     //establish Recipe constructor which takes the properties required for new recipe
@@ -22,7 +41,7 @@ public class Recipe {
         this.readyInMinutes = readyInMinutes; //readyInMinutes given when Recipe is created is saved as readyInMinutes
         this.caloriesPerServing = caloriesPerServing; //caloriesPerServing given when Recipe is created is saved as caloriesPerServing
         this.description = description; //description given when Recipe is created is saved as description
-        this.ingredients = new ArrayList<>(); // the ingredients is saved as an empty arrayList
+        this.recipeIngredients = new ArrayList<>(); // the ingredients is saved as an empty arrayList
         this.instructions = new ArrayList<>(); // instructions is saved as an empty arrayList
     }
 
@@ -45,11 +64,11 @@ public class Recipe {
     }
 
     public ArrayList<RecipeIngredient> getIngredients() { // getter function for ingredients
-        return ingredients;
+        return recipeIngredients;
     }
 
     public void setIngredients(ArrayList<RecipeIngredient> ingredients) { //setter function for ingredients
-        this.ingredients = ingredients;
+        this.recipeIngredients = ingredients;
     }
 
     public int getReadyInMinutes() { // getter function for readyInMinutes
@@ -82,5 +101,13 @@ public class Recipe {
 
     public void setInstructions(ArrayList<String> instructions) { //setter function for instructions
         this.instructions = instructions;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }

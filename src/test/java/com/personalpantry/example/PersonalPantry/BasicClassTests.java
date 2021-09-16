@@ -24,7 +24,7 @@ public class BasicClassTests {
     @BeforeEach
     public void before(){
         flour = new Ingredient("Flour", Category.BAKING, UnitType.GRAMS);
-        recipeFlour = new RecipeIngredient(flour, 40);
+        recipeFlour = new RecipeIngredient(flour, 40, recipeCake);
         recipeCake = new Recipe("Cake", 50, 126, "Easy 3 Ingredient Sponge Cake Recipe");
     }
 
@@ -92,7 +92,7 @@ public class BasicClassTests {
     public void recipeCanAddIngredients(){
         recipeCake.addIngredientToRecipe(recipeFlour);
         sugar = new Ingredient("Sugar", Category.BAKING, UnitType.GRAMS);
-        recipeSugar = new RecipeIngredient(sugar, 60);
+        recipeSugar = new RecipeIngredient(sugar, 60, recipeCake);
         recipeCake.addIngredientToRecipe(recipeSugar);
         assertEquals(2, recipeCake.getIngredients().size());
     }

@@ -21,7 +21,6 @@ public class SelectedRecipe {
             ingredient.setMeasure(newMeasure);
         }
         return recipe;
-
         // get back ArrayList <RI>
         // for each RI
         //getMeasure()
