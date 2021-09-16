@@ -1,10 +1,8 @@
 package com.personalpantry.example.PersonalPantry.Models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Table(name = "recipe_ingredients")
@@ -14,21 +12,21 @@ public class RecipeIngredient {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @JsonIgnoreProperties({"ingredient"})
-    @ManyToOne
-    @JoinColumn(name = "recipe_ingredient_id", nullable = false)
-    private Ingredient ingredient; //establish ingredient as ingredient
-
     @Column
     private double measure; //establish measure variable as an integer
 
     @Column(name = "picked_up")
     private boolean pickedUp; //establish pickedUp variable as a boolean
 
-    @JsonIgnoreProperties({"recipe"})
+    @JsonIgnoreProperties({"recipe_ingredients"})
     @ManyToOne
-    @JoinColumn(name = "recipe_id", nullable = false)
+    @JoinColumn(name = "recipe_id")
     private Recipe recipe;
+
+    @JsonIgnoreProperties({"recipe_ingredients"})
+    @ManyToOne
+    @JoinColumn(name = "ingredient_id")
+    private Ingredient ingredient; //establish ingredient as ingredient
 
     //establish RecipeIngredient constructor which takes the properties required for new recipe ingredient
     public RecipeIngredient(Ingredient ingredient, double measure, Recipe recipe) {
@@ -62,5 +60,21 @@ public class RecipeIngredient {
 
     public void setPickedUp(boolean pickedUp) { // setter function for ingredient
         this.pickedUp = pickedUp;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Recipe getRecipe() {
+        return recipe;
+    }
+
+    public void setRecipe(Recipe recipe) {
+        this.recipe = recipe;
     }
 }

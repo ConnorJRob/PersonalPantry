@@ -1,21 +1,39 @@
 package com.personalpantry.example.PersonalPantry.Models;
 
-import java.util.ArrayList;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import javax.persistence.*;
+import java.util.List;
+
+@Entity
+@Table(name = "selected_recipes")
 public class SelectedRecipe {
 
-    private Recipe recipe;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column
     private int desiredServings;
 
-    public SelectedRecipe(Recipe recipe, int desiredServings) {
+    @Column
+    private Recipe recipe;
+
+    @JsonIgnoreProperties({"selected_recipes"})
+    @ManyToOne
+    @JoinColumn(name = "shopping_list_id", nullable = false)
+    private ShoppingList shopping_list;
+
+    public SelectedRecipe(Recipe recipe, int desiredServings, ShoppingList shoppingList) {
         this.desiredServings = desiredServings;
         this.recipe = updatedRecipe(recipe);
+        this.shopping_list = shoppingList;
     }
 
     public SelectedRecipe(){}
 
     public Recipe updatedRecipe(Recipe recipe){
-        ArrayList<RecipeIngredient> ingredientsList = recipe.getIngredients();
+        List<RecipeIngredient> ingredientsList = recipe.getIngredients();
         for (RecipeIngredient ingredient : ingredientsList){
             double newMeasure = ingredient.getMeasure() * desiredServings;
             ingredient.setMeasure(newMeasure);
@@ -27,7 +45,6 @@ public class SelectedRecipe {
         //measure * desiredServing
         // RI.setMeasure(newMeasure)
     }
-
 
     public Recipe getRecipe() {
         return recipe;
@@ -43,5 +60,21 @@ public class SelectedRecipe {
 
     public void setDesiredServings(int desiredServings) {
         this.desiredServings = desiredServings;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public ShoppingList getShopping_list() {
+        return shopping_list;
+    }
+
+    public void setShopping_list(ShoppingList shopping_list) {
+        this.shopping_list = shopping_list;
     }
 }

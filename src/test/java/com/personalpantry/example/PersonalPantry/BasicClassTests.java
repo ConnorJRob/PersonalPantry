@@ -20,12 +20,14 @@ public class BasicClassTests {
     private String step4;
     private String step5;
     private SelectedRecipe selectedCakeRecipe;
+    private ShoppingList shoppingList;
 
     @BeforeEach
     public void before(){
         flour = new Ingredient("Flour", Category.BAKING, UnitType.GRAMS);
         recipeFlour = new RecipeIngredient(flour, 40, recipeCake);
         recipeCake = new Recipe("Cake", 50, 126, "Easy 3 Ingredient Sponge Cake Recipe");
+        shoppingList = new ShoppingList();
     }
 
     @Test
@@ -135,13 +137,13 @@ public class BasicClassTests {
 
     @Test
     public void selectedRecipeHasRecipe(){
-        selectedCakeRecipe = new SelectedRecipe(recipeCake, 4);
+        selectedCakeRecipe = new SelectedRecipe(recipeCake, 4, shoppingList);
         assertEquals(recipeCake, selectedCakeRecipe.getRecipe());
     }
 
     @Test
     public void selectedRecipeHasDesiredServings(){
-        selectedCakeRecipe = new SelectedRecipe(recipeCake, 4);
+        selectedCakeRecipe = new SelectedRecipe(recipeCake, 4, shoppingList);
         assertEquals(4, selectedCakeRecipe.getDesiredServings());
     }
 

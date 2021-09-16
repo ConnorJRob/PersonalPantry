@@ -4,7 +4,7 @@ import com.personalpantry.example.PersonalPantry.Models.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -15,7 +15,8 @@ public class AdvancedMethodTests {
     private Ingredient ingredient1;
     private Ingredient ingredient2;
     private RecipeIngredient recipeIngredient1;
-    private  RecipeIngredient recipeIngredient2;
+    private RecipeIngredient recipeIngredient2;
+    private ShoppingList shoppingList;
 
 @BeforeEach
     public void before() {
@@ -30,9 +31,9 @@ public class AdvancedMethodTests {
 
 @Test
     public void canUpdateRecipeIngredientMeasuresByDesiredServings() {
-    selectedRecipe = new SelectedRecipe(recipe, 4);
+    selectedRecipe = new SelectedRecipe(recipe, 4, shoppingList);
     recipe = selectedRecipe.getRecipe();
-    ArrayList<RecipeIngredient> ingredientsList = recipe.getIngredients();
+    List<RecipeIngredient> ingredientsList = recipe.getIngredients();
     assertEquals(4, ingredientsList.get(0).getMeasure());
     assertEquals(24.8, ingredientsList.get(1).getMeasure());
 }

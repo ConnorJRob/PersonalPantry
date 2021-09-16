@@ -4,8 +4,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
-
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "recipes")
@@ -28,9 +28,9 @@ public class Recipe {
     private String description; //establish description variable as String
 
     @JsonIgnoreProperties({"recipe"})
-    @Cascade(org.hibernate.annotations.CascadeType.DELETE)
+    @Cascade(org.hibernate.annotations.CascadeType.ALL)
     @OneToMany(mappedBy = "recipe", fetch = FetchType.LAZY)
-    private ArrayList<RecipeIngredient> recipeIngredients; //establish an ArrayList variable which only takes RecipeIngredients
+    private List<RecipeIngredient> recipeIngredients; //establish an ArrayList variable which only takes RecipeIngredients
 
     @Column
     private ArrayList<String> instructions; //establish an ArrayList variable which only takes Strings
@@ -48,7 +48,7 @@ public class Recipe {
     public Recipe(){};
 
     public void addIngredientToRecipe(RecipeIngredient recipeIngredient){
-        ingredients.add(recipeIngredient);
+        recipeIngredients.add(recipeIngredient);
     }
 
     public void addRecipeInstruction(String instructionStep){
@@ -63,7 +63,7 @@ public class Recipe {
         this.name = name;
     }
 
-    public ArrayList<RecipeIngredient> getIngredients() { // getter function for ingredients
+    public List<RecipeIngredient> getIngredients() { // getter function for ingredients
         return recipeIngredients;
     }
 
@@ -109,5 +109,13 @@ public class Recipe {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public List<RecipeIngredient> getRecipeIngredients() {
+        return recipeIngredients;
+    }
+
+    public void setRecipeIngredients(ArrayList<RecipeIngredient> recipeIngredients) {
+        this.recipeIngredients = recipeIngredients;
     }
 }
