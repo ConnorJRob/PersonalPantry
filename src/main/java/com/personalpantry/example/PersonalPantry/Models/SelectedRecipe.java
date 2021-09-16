@@ -8,8 +8,8 @@ public class SelectedRecipe {
     private int desiredServings;
 
     public SelectedRecipe(Recipe recipe, int desiredServings) {
-        this.recipe = updatedRecipe(recipe);
         this.desiredServings = desiredServings;
+        this.recipe = updatedRecipe(recipe);
     }
 
     public SelectedRecipe(){}
@@ -17,7 +17,7 @@ public class SelectedRecipe {
     public Recipe updatedRecipe(Recipe recipe){
         ArrayList<RecipeIngredient> ingredientsList = recipe.getIngredients();
         for (RecipeIngredient ingredient : ingredientsList){
-            float newMeasure = ingredient.getMeasure() * desiredServings;
+            double newMeasure = ingredient.getMeasure() * desiredServings;
             ingredient.setMeasure(newMeasure);
         }
         return recipe;
