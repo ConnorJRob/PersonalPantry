@@ -12,15 +12,15 @@ public enum UnitType {
     SMALL("small"),
     BLANK("");
 
-    private final String value;
+    private final String measurementUnit;
 
     // constructor for enum, UnitType takes a String and sets this as value property.
-    UnitType(String value) {
-        this.value = value;
+    UnitType(String measurementUnit) {
+        this.measurementUnit = measurementUnit;
     }
 
     // getter for value property, to give us access to this elsewhere.
-    public String getValue() {
-        return value;
+    public String getMeasurementUnit() {
+        return measurementUnit;
     }
 }
