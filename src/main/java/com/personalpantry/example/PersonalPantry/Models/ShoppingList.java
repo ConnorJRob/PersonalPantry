@@ -6,7 +6,7 @@ import java.util.HashMap;
 public class ShoppingList {
 
     private ArrayList<Recipe> recipeList;
-    private HashMap<String, Integer> ingredientList;
+    private HashMap<Ingredient, Integer> ingredientList;
 
     public ShoppingList() {
         this.recipeList = new ArrayList<>();
@@ -20,14 +20,14 @@ public class ShoppingList {
     }
 
     public void setRecipeList(ArrayList<Recipe> recipeList) {
-        recipeList = recipeList;
+        this.recipeList = recipeList;
     }
 
-    public HashMap<String, Integer> getIngredientList() {
+    public HashMap<Ingredient, Integer> getIngredientList() {
         return ingredientList;
     }
 
-    public void setIngredientList(HashMap<String, Integer> ingredientList) {
+    public void setIngredientList(HashMap<Ingredient, Integer> ingredientList) {
         this.ingredientList = ingredientList;
     }
 }
