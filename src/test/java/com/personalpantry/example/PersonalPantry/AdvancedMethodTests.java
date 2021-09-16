@@ -21,9 +21,9 @@ public class AdvancedMethodTests {
     public void before() {
     recipe = new Recipe("banana omelette", 5, 690, "egg pancake with mashed bananas");
     ingredient1 = new Ingredient("Banana", Category.PRODUCE, UnitType.BLANK);
-    recipeIngredient1 = new RecipeIngredient(ingredient1, 1);
+    recipeIngredient1 = new RecipeIngredient(ingredient1, 1, recipe);
     ingredient2 = new Ingredient("egg", Category.DAIRYANDEGGS, UnitType.BLANK);
-    recipeIngredient2 = new RecipeIngredient(ingredient2, 6.2);
+    recipeIngredient2 = new RecipeIngredient(ingredient2, 6.2, recipe);
     recipe.addIngredientToRecipe(recipeIngredient1);
     recipe.addIngredientToRecipe(recipeIngredient2);
 }

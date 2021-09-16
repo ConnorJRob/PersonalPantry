@@ -46,13 +46,13 @@ public class ShoppingList {
         this.recipeList = recipeList;
     }
 
-    public HashMap<Ingredient, Integer> getIngredientList() {
-        return ingredientList;
-    }
-
-    public void setIngredientList(HashMap<Ingredient, Integer> ingredientList) {
-        this.ingredientList = ingredientList;
-    }
+//    public HashMap<Ingredient, Integer> getIngredientList() {
+//        return ingredientList;
+//    }
+//
+//    public void setIngredientList(HashMap<Ingredient, Integer> ingredientList) {
+//        this.ingredientList = ingredientList;
+//    }
 
     public void addRecipeToShoppingList(SelectedRecipe selectedRecipe){
         this.recipeList.add(selectedRecipe);

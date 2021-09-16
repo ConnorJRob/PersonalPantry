@@ -1,7 +1,12 @@
 package com.personalpantry.example.PersonalPantry.Models;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 import java.util.ArrayList;
 
+@Entity
+@Table(name = "recipes")
 public class Recipe {
 
     private String name; //establish name variable as a String

@@ -1,17 +1,39 @@
 package com.personalpantry.example.PersonalPantry.Models;
 
-public class Ingredient {
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.hibernate.annotations.Cascade;
 
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+
+@Entity
+@Table(name = "ingredients")
+public class Ingredient {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column
     private String name; //establish name variable as a String
+
+    @Column
     private Category category; //establish categoryType variable as a categoryType Enum
+
+    @Column(name = "unit_type")
     private UnitType unitType; //establish unitType variable as a unitType Enum
 
+    @JsonIgnoreProperties({"recipe_ingredient"})
+    @Cascade(org.hibernate.annotations.CascadeType.DELETE)
+    @OneToMany(mappedBy = "recipe_ingredient", fetch = FetchType.LAZY)
+    private List<RecipeIngredient> recipeIngredients;
 
     //establish Ingredient constructor which takes the properties required for new ingredient
     public Ingredient(String name, Category category, UnitType unitType){
         this.name = name; //name given when Ingredient is created is saved as name
         this.category = category; //CategoryType enum given when Ingredient is created is saved as categoryType
         this.unitType = unitType; //unitType enum given when Ingredient is created is saved as unitType
+        this.recipeIngredients = new ArrayList<>();
     }
 
     public Ingredient(){}; //blank constructor - required for spring boot server
