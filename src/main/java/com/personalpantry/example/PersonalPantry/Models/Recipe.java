@@ -27,12 +27,12 @@ public class Recipe {
     @Column
     private String description; //establish description variable as String
 
-    @JsonBackReference
+    @JsonIgnoreProperties({"recipe"})
     @Cascade(org.hibernate.annotations.CascadeType.DELETE)
     @OneToMany(mappedBy = "recipe", fetch = FetchType.LAZY)
     private List<RecipeIngredient> recipeIngredients; //establish an ArrayList variable which only takes RecipeIngredients
 
-    @JsonBackReference
+    @JsonIgnoreProperties({"recipe"})
     @Cascade(org.hibernate.annotations.CascadeType.DELETE)
     @OneToMany(mappedBy = "recipe", fetch = FetchType.LAZY)
     private List<SelectedRecipe> selectedRecipes;

@@ -16,7 +16,7 @@ public class RecipeIngredientController {
     @Autowired
     RecipeIngredientRepository recipeIngredientRepository;
 
-    @GetMapping(value = "/recipesIngredients")
+    @GetMapping(value = "/recipeIngredients")
     public ResponseEntity<List<RecipeIngredient>> getAllRecipeIngredients() {
         return new ResponseEntity<>(recipeIngredientRepository.findAll(), HttpStatus.OK);
     }

@@ -16,8 +16,7 @@ public class ShoppingListController {
     ShoppingListRepository shoppingListRepository;
 
     @GetMapping(value = "/shoppingLists")
-    public ResponseEntity <List<ShoppingList>>getAllShoppingListIngredients(){
+    public ResponseEntity <List<ShoppingList>>getAllShoppingLists(){
         return new ResponseEntity<>(shoppingListRepository.findAll(), HttpStatus.OK);
     }
-
 }
