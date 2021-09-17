@@ -18,9 +18,11 @@ public class Ingredient {
     @Column
     private String name; //establish name variable as a String
 
+    @Enumerated(EnumType.STRING)
     @Column
     private Category category; //establish categoryType variable as a categoryType Enum
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "unit_type")
     private UnitType unitType; //establish unitType variable as a unitType Enum
 

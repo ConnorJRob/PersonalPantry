@@ -28,12 +28,18 @@ public class Recipe {
     private String description; //establish description variable as String
 
     @JsonIgnoreProperties({"recipe"})
-    @Cascade(org.hibernate.annotations.CascadeType.ALL)
+    @Cascade(org.hibernate.annotations.CascadeType.DELETE)
     @OneToMany(mappedBy = "recipe", fetch = FetchType.LAZY)
     private List<RecipeIngredient> recipeIngredients; //establish an ArrayList variable which only takes RecipeIngredients
 
-    @Column
-    private ArrayList<String> instructions; //establish an ArrayList variable which only takes Strings
+    @JsonIgnoreProperties({"recipe"})
+    @Cascade(org.hibernate.annotations.CascadeType.DELETE)
+    @OneToMany(mappedBy = "recipe", fetch = FetchType.LAZY)
+    private List<SelectedRecipe> selectedRecipes;
+
+    @ElementCollection
+    @Column(columnDefinition = "LONGTEXT")
+    private List<String> instructions; //establish an ArrayList variable which only takes Strings
 
     //establish Recipe constructor which takes the properties required for new recipe
     public Recipe(String name, int readyInMinutes, int caloriesPerServing, String description) {
@@ -43,6 +49,7 @@ public class Recipe {
         this.description = description; //description given when Recipe is created is saved as description
         this.recipeIngredients = new ArrayList<>(); // the ingredients is saved as an empty arrayList
         this.instructions = new ArrayList<>(); // instructions is saved as an empty arrayList
+        this.selectedRecipes = new ArrayList<>();
     }
 
     public Recipe(){};
@@ -95,11 +102,11 @@ public class Recipe {
         this.description = description;
     }
 
-    public ArrayList<String> getInstructions() {// getter function for instructions
+    public List<String> getInstructions() {// getter function for instructions
         return instructions;
     }
 
-    public void setInstructions(ArrayList<String> instructions) { //setter function for instructions
+    public void setInstructions(List<String> instructions) { //setter function for instructions
         this.instructions = instructions;
     }
 
@@ -117,5 +124,17 @@ public class Recipe {
 
     public void setRecipeIngredients(ArrayList<RecipeIngredient> recipeIngredients) {
         this.recipeIngredients = recipeIngredients;
+    }
+
+    public void setRecipeIngredients(List<RecipeIngredient> recipeIngredients) {
+        this.recipeIngredients = recipeIngredients;
+    }
+
+    public List<SelectedRecipe> getSelectedRecipes() {
+        return selectedRecipes;
+    }
+
+    public void setSelectedRecipes(List<SelectedRecipe> selectedRecipes) {
+        this.selectedRecipes = selectedRecipes;
     }
 }

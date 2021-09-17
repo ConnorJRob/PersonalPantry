@@ -1,6 +1,7 @@
 package com.personalpantry.example.PersonalPantry.Models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 import java.util.List;
@@ -16,7 +17,9 @@ public class SelectedRecipe {
     @Column
     private int desiredServings;
 
-    @Column
+    @JsonIgnoreProperties({"selected_recipes"})
+    @ManyToOne
+    @JoinColumn(name = "recipe_id", nullable = false)
     private Recipe recipe;
 
     @JsonIgnoreProperties({"selected_recipes"})
