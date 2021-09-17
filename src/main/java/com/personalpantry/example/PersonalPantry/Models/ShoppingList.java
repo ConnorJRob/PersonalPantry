@@ -7,12 +7,28 @@ import java.util.Map;
 public class ShoppingList {
 
     private ArrayList<SelectedRecipe> recipeList;
-    private HashMap<String, Integer> ingredientList;
+    private HashMap<String, Double> ingredientList;
 
     public ShoppingList() {
         this.recipeList = new ArrayList<>();
         this.ingredientList = new HashMap<>();
     }
+
+    public void createShoppingList(){
+        for (SelectedRecipe recipe : recipeList) {
+            for (RecipeIngredient ingredient : recipe.getRecipe().getIngredients()) {
+                if(ingredientList.containsKey(ingredient.getIngredient().getName())) {
+                    String ingredientName = ingredient.getIngredient().getName();
+                    double newValue = ingredientList.get(ingredientName) + ingredient.getMeasure();;
+                    ingredientList.replace(ingredientName, newValue);
+                }
+                else {
+                    ingredientList.put(ingredient.getIngredient().getName(), ingredient.getMeasure());
+                }
+            }
+        }
+    }
+
 
 ////    public ShoppingList(){};
 //    public void addToRecipeList(SelectedRecipe selectedRecipe){
