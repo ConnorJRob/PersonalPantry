@@ -1,5 +1,6 @@
 package com.personalpantry.example.PersonalPantry.Models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cascade;
 
@@ -16,7 +17,7 @@ public class ShoppingList {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @JsonIgnoreProperties({"shopping_list"})
+    @JsonBackReference
     @Cascade(org.hibernate.annotations.CascadeType.DELETE)
     @OneToMany(mappedBy = "shopping_list", fetch = FetchType.LAZY)
     private List<SelectedRecipe> recipeList;

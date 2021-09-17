@@ -17,12 +17,12 @@ public class SelectedRecipe {
     @Column
     private int desiredServings;
 
-    @JsonIgnoreProperties({"selected_recipes"})
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "recipe_id", nullable = false)
     private Recipe recipe;
 
-    @JsonIgnoreProperties({"selected_recipes"})
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "shopping_list_id", nullable = false)
     private ShoppingList shopping_list;

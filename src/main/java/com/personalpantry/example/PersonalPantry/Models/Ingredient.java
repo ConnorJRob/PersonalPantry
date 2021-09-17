@@ -1,5 +1,6 @@
 package com.personalpantry.example.PersonalPantry.Models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cascade;
 
@@ -26,7 +27,7 @@ public class Ingredient {
     @Column(name = "unit_type")
     private UnitType unitType; //establish unitType variable as a unitType Enum
 
-    @JsonIgnoreProperties({"ingredient"})
+    @JsonBackReference
     @Cascade(org.hibernate.annotations.CascadeType.DELETE)
     @OneToMany(mappedBy = "ingredient", fetch = FetchType.LAZY)
     private List<RecipeIngredient> recipeIngredients;

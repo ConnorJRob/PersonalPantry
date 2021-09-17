@@ -18,12 +18,12 @@ public class RecipeIngredient {
     @Column(name = "picked_up")
     private boolean pickedUp; //establish pickedUp variable as a boolean
 
-    @JsonIgnoreProperties({"recipe_ingredients"})
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "recipe_id")
     private Recipe recipe;
 
-    @JsonIgnoreProperties({"recipe_ingredients"})
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "ingredient_id")
     private Ingredient ingredient; //establish ingredient as ingredient
