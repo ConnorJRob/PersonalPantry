@@ -30,15 +30,14 @@ public class DataLoader implements ApplicationRunner {
     public void run(ApplicationArguments args) {
 
         // Order for Each Recipe: //
-        //// Create New Ingredients /////
         /////// Create Recipe //////
         ////// Write Instructions ////////
         ////// Add Instructions to Recipe /////////
-        /////// Create Recipe Ingredients from Ingredients ////////
-        /////// Add RecipeIngredients to Recipe ////////
         /////// Save Recipe to Recipe Repo ////////
+        //// Create New Ingredients /////
+        /////// Create Recipe Ingredients from Ingredients & Save to RecipeIngredients Repo ////////
 
-        /////////       Easy Steak Pie             /////////////
+        /////////       Easy Steak Pie          //////////
 
         /////// Recipe //////
         Recipe steakPie = new Recipe("Easy Steak Pie", 195, 611, "Nothing beats a classic homemade steak pie, complete with golden-brown flaky pastry and a rich filling. This easy family feast only takes 15 minutes to prep");
