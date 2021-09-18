@@ -31,4 +31,10 @@ public class SelectedRecipeController {
         selectedRecipeRepository.save(selectedRecipe);
         return new ResponseEntity<>(selectedRecipe, HttpStatus.OK);
     }
+
+    @DeleteMapping(value = "/selectedRecipes")
+    public ResponseEntity<List<SelectedRecipe>> deleteAllSelectedRecipes(){
+        selectedRecipeRepository.deleteAll();
+        return new ResponseEntity<>(selectedRecipeRepository.findAll(), HttpStatus.OK);
+    }
 }
