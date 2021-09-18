@@ -37,7 +37,6 @@ public class Ingredient {
         this.name = name; //name given when Ingredient is created is saved as name
         this.category = category; //CategoryType enum given when Ingredient is created is saved as categoryType
         this.unitType = unitType; //unitType enum given when Ingredient is created is saved as unitType
-        this.recipeIngredients = new ArrayList<>();
     }
 
     public Ingredient(){}; //blank constructor - required for spring boot server

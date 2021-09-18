@@ -36,6 +36,5 @@ public class AdvancedMethodTests {
     List<RecipeIngredient> ingredientsList = recipe.getIngredients();
     assertEquals(4, ingredientsList.get(0).getMeasure());
     assertEquals(24.8, ingredientsList.get(1).getMeasure());
-}
-
+    }
 }

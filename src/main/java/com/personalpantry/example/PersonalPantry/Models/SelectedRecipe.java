@@ -16,31 +16,32 @@ public class SelectedRecipe {
     @Column
     private int desiredServings;
 
-    @JsonBackReference
+//    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "recipe_id", nullable = false)
     private Recipe recipe;
 
-    @JsonBackReference
+//    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "shopping_list_id", nullable = false)
     private ShoppingList shopping_list;
 
     public SelectedRecipe(Recipe recipe, int desiredServings, ShoppingList shoppingList) {
         this.desiredServings = desiredServings;
-        this.recipe = updatedRecipe(recipe);
+//        this.recipe = updatedRecipe(recipe);
+        this.recipe = recipe;
         this.shopping_list = shoppingList;
     }
 
     public SelectedRecipe(){}
 
-    public Recipe updatedRecipe(Recipe recipe){
-        List<RecipeIngredient> ingredientsList = recipe.getIngredients();
-        for (RecipeIngredient ingredient : ingredientsList){
-            double newMeasure = ingredient.getMeasure() * desiredServings;
-            ingredient.setMeasure(newMeasure);
-        }
-        return recipe;
+//    public Recipe updatedRecipe(Recipe recipe){
+//        List<RecipeIngredient> ingredientsList = recipe.getIngredients();
+//        for (RecipeIngredient ingredient : ingredientsList){
+//            double newMeasure = ingredient.getMeasure() * desiredServings;
+//            ingredient.setMeasure(newMeasure);
+//        }
+//        return recipe;
         // get back ArrayList <RI>
         // for each RI
         //getMeasure()

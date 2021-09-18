@@ -29,6 +29,9 @@ public class DataLoader implements ApplicationRunner {
 
     public void run(ApplicationArguments args) {
 
+        ShoppingList shoppingList = new ShoppingList(); // This is the single shopping list object that will constantly be added to and cleared
+        shoppingListRepository.save(shoppingList);
+
         // Order for Each Recipe: //
         /////// Create Recipe //////
         ////// Write Instructions ////////
@@ -81,7 +84,7 @@ public class DataLoader implements ApplicationRunner {
         ingredientRepository.save(egg);
 
         /////// Recipe Ingredients ////////
-        RecipeIngredient steakPieSunflowerOil = new RecipeIngredient(sunflowerOil, 7.5, steakPie);
+        RecipeIngredient steakPieSunflowerOil = new RecipeIngredient(sunflowerOil,7.5, steakPie);
         recipeIngredientRepository.save(steakPieSunflowerOil);
 
         RecipeIngredient steakPieSteak = new RecipeIngredient(steak, 166, steakPie);
@@ -339,5 +342,7 @@ public class DataLoader implements ApplicationRunner {
 //        grilledSteakWPineappleRice.addIngredientToRecipe(grilledSteakWPineappleRicePrecookedBrownRice);
 //        grilledSteakWPineappleRice.addIngredientToRecipe(grilledSteakWPineappleRiceCookingSalt);
 //    }
-}
+        SelectedRecipe serves4SteakPie = new SelectedRecipe(steakPie, 4, shoppingList);
+        selectedRecipeRepository.save(serves4SteakPie);
+    }
 }

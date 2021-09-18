@@ -1,5 +1,6 @@
 package com.personalpantry.example.PersonalPantry.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cascade;
 
@@ -27,19 +28,19 @@ public class Recipe {
     @Column
     private String description; //establish description variable as String
 
+    @ElementCollection
+    @Column(columnDefinition = "LONGTEXT")
+    private List<String> instructions; //establish an ArrayList variable which only takes Strings
+
     @JsonIgnoreProperties({"recipe"})
     @Cascade(org.hibernate.annotations.CascadeType.DELETE)
     @OneToMany(mappedBy = "recipe", fetch = FetchType.LAZY)
     private List<RecipeIngredient> recipeIngredients; //establish an ArrayList variable which only takes RecipeIngredients
 
-    @JsonIgnoreProperties({"recipe"})
+    @JsonIgnore
     @Cascade(org.hibernate.annotations.CascadeType.DELETE)
     @OneToMany(mappedBy = "recipe", fetch = FetchType.LAZY)
     private List<SelectedRecipe> selectedRecipes;
-
-    @ElementCollection
-    @Column(columnDefinition = "LONGTEXT")
-    private List<String> instructions; //establish an ArrayList variable which only takes Strings
 
     //establish Recipe constructor which takes the properties required for new recipe
     public Recipe(String name, int readyInMinutes, int caloriesPerServing, String description) {
@@ -49,7 +50,6 @@ public class Recipe {
         this.description = description; //description given when Recipe is created is saved as description
         this.recipeIngredients = new ArrayList<>(); // the ingredients is saved as an empty arrayList
         this.instructions = new ArrayList<>(); // instructions is saved as an empty arrayList
-        this.selectedRecipes = new ArrayList<>();
     }
 
     public Recipe(){};

@@ -24,7 +24,6 @@ public class RecipeIngredient {
     @JoinColumn(name = "recipe_id")
     private Recipe recipe;
 
-    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "ingredient_id")
     private Ingredient ingredient; //establish ingredient as ingredient
