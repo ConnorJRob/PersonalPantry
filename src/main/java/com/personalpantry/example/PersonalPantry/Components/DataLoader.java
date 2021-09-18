@@ -84,7 +84,7 @@ public class DataLoader implements ApplicationRunner {
         ingredientRepository.save(egg);
 
         /////// Recipe Ingredients ////////
-        RecipeIngredient steakPieSunflowerOil = new RecipeIngredient(sunflowerOil,7.5, steakPie);
+        RecipeIngredient steakPieSunflowerOil = new RecipeIngredient(sunflowerOil, 7.5, steakPie);
         recipeIngredientRepository.save(steakPieSunflowerOil);
 
         RecipeIngredient steakPieSteak = new RecipeIngredient(steak, 166, steakPie);

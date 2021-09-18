@@ -47,7 +47,7 @@ public class SelectedRecipe {
         //getMeasure()
         //measure * desiredServing
         // RI.setMeasure(newMeasure)
-    }
+//    }
 
     public Recipe getRecipe() {
         return recipe;

@@ -32,7 +32,6 @@ public class Recipe {
     @Column(columnDefinition = "LONGTEXT")
     private List<String> instructions; //establish an ArrayList variable which only takes Strings
 
-    @JsonIgnoreProperties({"recipe"})
     @Cascade(org.hibernate.annotations.CascadeType.DELETE)
     @OneToMany(mappedBy = "recipe", fetch = FetchType.LAZY)
     private List<RecipeIngredient> recipeIngredients; //establish an ArrayList variable which only takes RecipeIngredients
@@ -48,7 +47,6 @@ public class Recipe {
         this.readyInMinutes = readyInMinutes; //readyInMinutes given when Recipe is created is saved as readyInMinutes
         this.caloriesPerServing = caloriesPerServing; //caloriesPerServing given when Recipe is created is saved as caloriesPerServing
         this.description = description; //description given when Recipe is created is saved as description
-        this.recipeIngredients = new ArrayList<>(); // the ingredients is saved as an empty arrayList
         this.instructions = new ArrayList<>(); // instructions is saved as an empty arrayList
     }
 

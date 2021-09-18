@@ -18,23 +18,23 @@ public class AdvancedMethodTests {
     private RecipeIngredient recipeIngredient2;
     private ShoppingList shoppingList;
 
-@BeforeEach
-    public void before() {
-    recipe = new Recipe("banana omelette", 5, 690, "egg pancake with mashed bananas");
-    ingredient1 = new Ingredient("Banana", Category.PRODUCE, UnitType.SINGLEUNIT);
-    recipeIngredient1 = new RecipeIngredient(ingredient1, 1, recipe);
-    ingredient2 = new Ingredient("egg", Category.DAIRYANDEGGS, UnitType.SINGLEUNIT);
-    recipeIngredient2 = new RecipeIngredient(ingredient2, 6.2, recipe);
-    recipe.addIngredientToRecipe(recipeIngredient1);
-    recipe.addIngredientToRecipe(recipeIngredient2);
-}
-
-@Test
-    public void canUpdateRecipeIngredientMeasuresByDesiredServings() {
-    selectedRecipe = new SelectedRecipe(recipe, 4, shoppingList);
-    recipe = selectedRecipe.getRecipe();
-    List<RecipeIngredient> ingredientsList = recipe.getIngredients();
-    assertEquals(4, ingredientsList.get(0).getMeasure());
-    assertEquals(24.8, ingredientsList.get(1).getMeasure());
-    }
+//@BeforeEach
+//    public void before() {
+//    recipe = new Recipe("banana omelette", 5, 690, "egg pancake with mashed bananas");
+//    ingredient1 = new Ingredient("Banana", Category.PRODUCE, UnitType.SINGLEUNIT);
+//    recipeIngredient1 = new RecipeIngredient(ingredient1, 1, recipe);
+//    ingredient2 = new Ingredient("egg", Category.DAIRYANDEGGS, UnitType.SINGLEUNIT);
+//    recipeIngredient2 = new RecipeIngredient(ingredient2, 6.2, recipe);
+//    recipe.addIngredientToRecipe(recipeIngredient1);
+//    recipe.addIngredientToRecipe(recipeIngredient2);
+//}
+//
+//@Test
+//    public void canUpdateRecipeIngredientMeasuresByDesiredServings() {
+//    selectedRecipe = new SelectedRecipe(recipe, 4, shoppingList);
+//    recipe = selectedRecipe.getRecipe();
+//    List<RecipeIngredient> ingredientsList = recipe.getIngredients();
+//    assertEquals(4, ingredientsList.get(0).getMeasure());
+//    assertEquals(24.8, ingredientsList.get(1).getMeasure());
+//    }
 }

@@ -19,14 +19,14 @@ public class RecipeIngredient {
     @Column(name = "picked_up")
     private boolean pickedUp; //establish pickedUp variable as a boolean
 
+    @ManyToOne
+    @JoinColumn(name = "ingredient_id")
+    private Ingredient ingredient; //establish ingredient as ingredient
+
     @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "recipe_id")
     private Recipe recipe;
-
-    @ManyToOne
-    @JoinColumn(name = "ingredient_id")
-    private Ingredient ingredient; //establish ingredient as ingredient
 
     //establish RecipeIngredient constructor which takes the properties required for new recipe ingredient
     public RecipeIngredient(Ingredient ingredient, double measure, Recipe recipe) {
