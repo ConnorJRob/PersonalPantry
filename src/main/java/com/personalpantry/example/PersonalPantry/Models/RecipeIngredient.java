@@ -38,36 +38,36 @@ public class RecipeIngredient {
 
     public RecipeIngredient(){};
 
-    public Ingredient getIngredient() { // getter function for ingredient
-        return ingredient;
-    }
-
-    public void setIngredient(Ingredient ingredient) { // setter function for ingredient
-        this.ingredient = ingredient;
-    }
-
-    public double getMeasure() { // getter function for measure
-        return measure;
-    }
-
-    public void setMeasure(double measure) { // setter function for measure
-        this.measure = measure;
-    }
-
-    public boolean isPickedUp() { // getter function for isPickedUp
-        return pickedUp;
-    }
-
-    public void setPickedUp(boolean pickedUp) { // setter function for ingredient
-        this.pickedUp = pickedUp;
-    }
-
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public double getMeasure() {
+        return measure;
+    }
+
+    public void setMeasure(double measure) {
+        this.measure = measure;
+    }
+
+    public boolean isPickedUp() {
+        return pickedUp;
+    }
+
+    public void setPickedUp(boolean pickedUp) {
+        this.pickedUp = pickedUp;
+    }
+
+    public Ingredient getIngredient() {
+        return ingredient;
+    }
+
+    public void setIngredient(Ingredient ingredient) {
+        this.ingredient = ingredient;
     }
 
     public Recipe getRecipe() {

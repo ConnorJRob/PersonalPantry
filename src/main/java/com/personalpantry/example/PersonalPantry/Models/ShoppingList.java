@@ -32,20 +32,20 @@ public class ShoppingList {
         this.recipeList.add(selectedRecipe);
     }
 
-    public List<SelectedRecipe> getRecipeList() {
-        return recipeList;
-    }
-
-    public void setRecipeList(List<SelectedRecipe> recipeList) {
-        this.recipeList = recipeList;
-    }
-
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public List<SelectedRecipe> getRecipeList() {
+        return recipeList;
+    }
+
+    public void setRecipeList(List<SelectedRecipe> recipeList) {
+        this.recipeList = recipeList;
     }
 
     public HashMap<String, Integer> getIngredientList() {
@@ -56,7 +56,7 @@ public class ShoppingList {
         this.ingredientList = ingredientList;
     }
 
-//    public void addToIngredientList(Ingredient ingredient) {
+    //    public void addToIngredientList(Ingredient ingredient) {
 //        // if ingredientList keyset contains ingredient name
 //    if (ingredientList.containsKey(ingredient.getName()){
 //        //get value linked to ingredient name key

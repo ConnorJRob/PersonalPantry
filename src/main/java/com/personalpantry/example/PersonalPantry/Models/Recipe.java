@@ -60,54 +60,6 @@ public class Recipe {
         instructions.add(instructionStep);
     }
 
-    public String getName() { // getter function for name
-        return name;
-    }
-
-    public void setName(String name) { //setter function for name
-        this.name = name;
-    }
-
-    public List<RecipeIngredient> getIngredients() { // getter function for ingredients
-        return recipeIngredients;
-    }
-
-    public void setIngredients(ArrayList<RecipeIngredient> ingredients) { //setter function for ingredients
-        this.recipeIngredients = ingredients;
-    }
-
-    public int getReadyInMinutes() { // getter function for readyInMinutes
-        return readyInMinutes;
-    }
-
-    public void setReadyInMinutes(int readyInMinutes) { //setter function for readyInMinutes
-        this.readyInMinutes = readyInMinutes;
-    }
-
-    public int getCaloriesPerServing() { // getter function for caloriesPerServing
-        return caloriesPerServing;
-    }
-
-    public void setCaloriesPerServing(int caloriesPerServing) { //setter function for caloriesPerServing
-        this.caloriesPerServing = caloriesPerServing;
-    }
-
-    public String getDescription() { // getter function for description
-        return description;
-    }
-
-    public void setDescription(String description) { //setter function for description
-        this.description = description;
-    }
-
-    public List<String> getInstructions() {// getter function for instructions
-        return instructions;
-    }
-
-    public void setInstructions(List<String> instructions) { //setter function for instructions
-        this.instructions = instructions;
-    }
-
     public Long getId() {
         return id;
     }
@@ -116,12 +68,48 @@ public class Recipe {
         this.id = id;
     }
 
-    public List<RecipeIngredient> getRecipeIngredients() {
-        return recipeIngredients;
+    public String getName() {
+        return name;
     }
 
-    public void setRecipeIngredients(ArrayList<RecipeIngredient> recipeIngredients) {
-        this.recipeIngredients = recipeIngredients;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getReadyInMinutes() {
+        return readyInMinutes;
+    }
+
+    public void setReadyInMinutes(int readyInMinutes) {
+        this.readyInMinutes = readyInMinutes;
+    }
+
+    public int getCaloriesPerServing() {
+        return caloriesPerServing;
+    }
+
+    public void setCaloriesPerServing(int caloriesPerServing) {
+        this.caloriesPerServing = caloriesPerServing;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public List<String> getInstructions() {
+        return instructions;
+    }
+
+    public void setInstructions(List<String> instructions) {
+        this.instructions = instructions;
+    }
+
+    public List<RecipeIngredient> getRecipeIngredients() {
+        return recipeIngredients;
     }
 
     public void setRecipeIngredients(List<RecipeIngredient> recipeIngredients) {

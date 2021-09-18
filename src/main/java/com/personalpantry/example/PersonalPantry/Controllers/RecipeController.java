@@ -5,9 +5,7 @@ import com.personalpantry.example.PersonalPantry.Repositories.RecipeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -25,5 +23,11 @@ public class RecipeController {
     @GetMapping(value = "/recipes/{id}")
     public ResponseEntity<Optional<Recipe>> getRecipe(@PathVariable Long id){
         return new ResponseEntity<>(recipeRepository.findById(id), HttpStatus.OK);
+    }
+
+    @PostMapping(value = "/recipes")
+    public ResponseEntity<Recipe> createRecipe(@RequestBody Recipe recipe){
+        recipeRepository.save(recipe);
+        return new ResponseEntity<>(recipe, HttpStatus.CREATED);
     }
 }

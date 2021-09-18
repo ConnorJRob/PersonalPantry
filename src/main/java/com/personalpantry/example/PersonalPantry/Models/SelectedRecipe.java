@@ -1,6 +1,7 @@
 package com.personalpantry.example.PersonalPantry.Models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.List;
@@ -16,20 +17,18 @@ public class SelectedRecipe {
     @Column
     private int desiredServings;
 
-//    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "recipe_id", nullable = false)
     private Recipe recipe;
 
-//    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "shopping_list_id", nullable = false)
     private ShoppingList shopping_list;
 
     public SelectedRecipe(Recipe recipe, int desiredServings, ShoppingList shoppingList) {
-        this.desiredServings = desiredServings;
 //        this.recipe = updatedRecipe(recipe);
         this.recipe = recipe;
+        this.desiredServings = desiredServings;
         this.shopping_list = shoppingList;
     }
 
@@ -49,12 +48,12 @@ public class SelectedRecipe {
         // RI.setMeasure(newMeasure)
 //    }
 
-    public Recipe getRecipe() {
-        return recipe;
+    public Long getId() {
+        return id;
     }
 
-    public void setRecipe(Recipe recipe) {
-        this.recipe = recipe;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public int getDesiredServings() {
@@ -65,12 +64,12 @@ public class SelectedRecipe {
         this.desiredServings = desiredServings;
     }
 
-    public Long getId() {
-        return id;
+    public Recipe getRecipe() {
+        return recipe;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setRecipe(Recipe recipe) {
+        this.recipe = recipe;
     }
 
     public ShoppingList getShopping_list() {
