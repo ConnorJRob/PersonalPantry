@@ -349,9 +349,9 @@ public class DataLoader implements ApplicationRunner {
         selectedRecipeRepository.save(serves2SteakPie);
         shoppingList.addRecipeToShoppingList(serves2SteakPie);
         shoppingList.addRecipeToShoppingList(serves4SteakPie);
-        System.out.println(shoppingList.getRecipeList().get(0).getRecipe().getRecipeIngredients().get(0).getIngredient().getName());
+//        System.out.println(shoppingList.getRecipeList().get(0).getRecipe().getRecipeIngredients().get(0).getIngredient().getName());
         shoppingList.createShoppingList();
-        System.out.println(shoppingList.getIngredientList().get("Tomato Ketchup"));
+//        System.out.println(shoppingList.getIngredientList().get("Tomato Ketchup"));
         shoppingListRepository.save(shoppingList);
     }
 }

@@ -4,7 +4,9 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Entity
 @Table(name = "selected_recipes")
@@ -25,24 +27,54 @@ public class SelectedRecipe {
     @JoinColumn(name = "shopping_list_id", nullable = false)
     private ShoppingList shopping_list;
 
+    @ElementCollection
+    @CollectionTable(name = "updated_measures", joinColumns = {@JoinColumn(name = "selected_recipe_id", referencedColumnName = "id")})
+    @MapKeyColumn(name="updated_measures_key")
+    @Column(name = "updated_measures_value")
+    private Map<String, Double> updatedMeasuresMap;
+
     public SelectedRecipe(Recipe recipe, int desiredServings, ShoppingList shoppingList) {
 //        this.recipe = updatedRecipe(recipe);
         this.desiredServings = desiredServings;
-        this.recipe = updatedRecipe(recipe);
+        this.recipe = recipe;
         this.shopping_list = shoppingList;
+//        this.updatedMeasuresMap = new HashMap<>();
+        this.updatedMeasuresMap = updatedRecipe(recipe);
     }
 
     public SelectedRecipe(){}
 
-    public Recipe updatedRecipe(Recipe recipe){
-//        Recipe copyOfRecipe = recipe;
+    public HashMap<String, Double> updatedRecipe(Recipe recipe){
+        HashMap<String, Double> instanceMap = new HashMap<>();
+
         List<RecipeIngredient> ingredientsList = recipe.getRecipeIngredients();
+
         for (RecipeIngredient recipeIngredient : ingredientsList){
+
             double newMeasure = recipeIngredient.getMeasure() * desiredServings;
-            recipeIngredient.setMeasure(newMeasure);
+            instanceMap.put(recipeIngredient.getIngredient().getName(), newMeasure);
+
         }
-        return recipe;
+        return instanceMap;
     }
+
+//    public void updatedRecipe(Recipe recipe){
+//        List<RecipeIngredient> ingredientsList = recipe.getRecipeIngredients();
+//        for (RecipeIngredient recipeIngredient : ingredientsList){
+//            double newMeasure = recipeIngredient.getMeasure() * desiredServings;
+//            updatedMeasuresMap.put(recipeIngredient.getIngredient().getName(), newMeasure);
+//        }
+//    }
+
+//    public Recipe updatedRecipe(Recipe recipe){
+////        Recipe copyOfRecipe = recipe;
+//        List<RecipeIngredient> ingredientsList = recipe.getRecipeIngredients();
+//        for (RecipeIngredient recipeIngredient : ingredientsList){
+//            double newMeasure = recipeIngredient.getMeasure() * desiredServings;
+//            recipeIngredient.setMeasure(newMeasure);
+//        }
+//        return recipe;
+//    }
 
     public Long getId() {
         return id;
@@ -74,5 +106,13 @@ public class SelectedRecipe {
 
     public void setShopping_list(ShoppingList shopping_list) {
         this.shopping_list = shopping_list;
+    }
+
+    public Map<String, Double> getUpdatedMeasuresMap() {
+        return updatedMeasuresMap;
+    }
+
+    public void setUpdatedMeasuresMap(Map<String, Double> updatedMeasuresMap) {
+        this.updatedMeasuresMap = updatedMeasuresMap;
     }
 }

@@ -10,8 +10,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AdvancedMethodTests {
 
-    private Recipe recipe1;
-    private Recipe recipe2;
+    private Recipe recipe;
+//    private Recipe recipe2;
     private SelectedRecipe selectedRecipe1;
     private SelectedRecipe selectedRecipe2;
     private Ingredient ingredient1;
@@ -27,22 +27,23 @@ public class AdvancedMethodTests {
 
     shoppingList = new ShoppingList();
 
-    recipe1 = new Recipe("banana omelette", 5, 690, "egg pancake with mashed bananas");
-    recipe2 = new Recipe("banana omelette", 5, 690, "egg pancake with mashed bananas");
+    recipe = new Recipe("banana omelette", 5, 690, "egg pancake with mashed bananas");
+//    recipe2 = new Recipe("banana omelette", 5, 690, "egg pancake with mashed bananas");
 
     ingredient1 = new Ingredient("Banana", Category.PRODUCE, UnitType.SINGLEUNIT);
     ingredient2 = new Ingredient("Egg", Category.DAIRYANDEGGS, UnitType.SINGLEUNIT);
 
-    recipeIngredient1 = new RecipeIngredient(ingredient1, 1, recipe1);
-    recipeIngredient2 = new RecipeIngredient(ingredient1, 1, recipe2);
-    recipeIngredient3 = new RecipeIngredient(ingredient2, 6.2, recipe1);
-    recipeIngredient4 = new RecipeIngredient(ingredient2, 6.2, recipe2);
+    recipeIngredient1 = new RecipeIngredient(ingredient1, 1, recipe);
+//    recipeIngredient2 = new RecipeIngredient(ingredient1, 1, recipe2);
+    recipeIngredient3 = new RecipeIngredient(ingredient2, 6.2, recipe);
+//    recipeIngredient4 = new RecipeIngredient(ingredient2, 6.2, recipe2);
 
-    recipe1.getRecipeIngredients().add(recipeIngredient1);
-    recipe1.getRecipeIngredients().add(recipeIngredient3);
 
-    recipe2.getRecipeIngredients().add(recipeIngredient2);
-    recipe2.getRecipeIngredients().add(recipeIngredient4);
+    recipe.getRecipeIngredients().add(recipeIngredient1);
+    recipe.getRecipeIngredients().add(recipeIngredient3);
+
+//    recipe2.getRecipeIngredients().add(recipeIngredient2);
+//    recipe2.getRecipeIngredients().add(recipeIngredient4);
 }
 //
 //@Test
@@ -56,7 +57,7 @@ public class AdvancedMethodTests {
 
     @Test
     public void canGenerateShoppingList() {
-    selectedRecipe1 = new SelectedRecipe(recipe1, 4, shoppingList);
+    selectedRecipe1 = new SelectedRecipe(recipe, 4, shoppingList);
     shoppingList.addRecipeToShoppingList(selectedRecipe1);
     shoppingList.createShoppingList();
     assertEquals(4, shoppingList.getIngredientList().get("Banana"));
@@ -65,13 +66,13 @@ public class AdvancedMethodTests {
 
     @Test
     public void canGenerateShoppingListWithMultipleSelectedRecipes() {
-        selectedRecipe1 = new SelectedRecipe(recipe1, 2, shoppingList);
-        selectedRecipe2 = new SelectedRecipe(recipe2, 1, shoppingList);
+        selectedRecipe1 = new SelectedRecipe(recipe, 2, shoppingList);
+        selectedRecipe2 = new SelectedRecipe(recipe, 1, shoppingList);
         shoppingList.addRecipeToShoppingList(selectedRecipe1);
         shoppingList.addRecipeToShoppingList(selectedRecipe2);
         shoppingList.createShoppingList();
         assertEquals(3, shoppingList.getIngredientList().get("Banana"));
-//        assertEquals(37.2, shoppingList.getIngredientList().get("Egg"));
+        assertEquals(18.6, shoppingList.getIngredientList().get("Egg"));
     }
 
 //    @Test

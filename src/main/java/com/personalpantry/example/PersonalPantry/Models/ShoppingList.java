@@ -45,22 +45,42 @@ public class ShoppingList {
         ingredientList.clear();
         for (SelectedRecipe selectedRecipe : recipeList) {
 
-            for (RecipeIngredient recipeIngredient : selectedRecipe.getRecipe().getRecipeIngredients()) {
+            for (Map.Entry<String, Double> entry : selectedRecipe.getUpdatedMeasuresMap().entrySet()) {
 
-                if(ingredientList.containsKey(recipeIngredient.getIngredient().getName())) {
+                if(ingredientList.containsKey(entry.getKey())) {
 
-                    String ingredientName = recipeIngredient.getIngredient().getName();
-                    double newValue = ingredientList.get(ingredientName) + recipeIngredient.getMeasure();
-                    ingredientList.replace(ingredientName, newValue);
+                    double newValue = ingredientList.get(entry.getKey()) + entry.getValue();
+                    ingredientList.replace(entry.getKey(), newValue);
 
-                }
+                } else {
 
-                else {
-                    ingredientList.put(recipeIngredient.getIngredient().getName(), recipeIngredient.getMeasure());
+                    ingredientList.put(entry.getKey(), entry.getValue());
+
                 }
             }
         }
     }
+
+//    public void createShoppingList(){
+//        ingredientList.clear();
+//        for (SelectedRecipe selectedRecipe : recipeList) {
+//
+//            for (RecipeIngredient recipeIngredient : selectedRecipe.getRecipe().getRecipeIngredients()) {
+//
+//                if(ingredientList.containsKey(recipeIngredient.getIngredient().getName())) {
+//
+//                    String ingredientName = recipeIngredient.getIngredient().getName();
+//                    double newValue = ingredientList.get(ingredientName) + recipeIngredient.getMeasure();
+//                    ingredientList.replace(ingredientName, newValue);
+//
+//                }
+//
+//                else {
+//                    ingredientList.put(recipeIngredient.getIngredient().getName(), recipeIngredient.getMeasure());
+//                }
+//            }
+//        }
+//    }
 
     public void addRecipeToShoppingList(SelectedRecipe selectedRecipe){
         this.recipeList.add(selectedRecipe);
