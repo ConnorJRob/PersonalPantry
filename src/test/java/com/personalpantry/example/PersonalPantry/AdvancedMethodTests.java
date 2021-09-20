@@ -27,7 +27,7 @@ public class AdvancedMethodTests {
 
     shoppingList = new ShoppingList();
 
-    recipe = new Recipe("banana omelette", 5, 690, "egg pancake with mashed bananas");
+    recipe = new Recipe("banana omelette", 5, 690, "egg pancake with mashed bananas", "URLSTRING");
 //    recipe2 = new Recipe("banana omelette", 5, 690, "egg pancake with mashed bananas");
 
     ingredient1 = new Ingredient("Banana", Category.PRODUCE, UnitType.SINGLEUNIT);

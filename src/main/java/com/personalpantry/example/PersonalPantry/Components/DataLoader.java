@@ -43,7 +43,7 @@ public class DataLoader implements ApplicationRunner {
         /////////       Easy Steak Pie          //////////
 
         /////// Recipe //////
-        Recipe steakPie = new Recipe("Easy Steak Pie", 195, 611, "Nothing beats a classic homemade steak pie, complete with golden-brown flaky pastry and a rich filling. This easy family feast only takes 15 minutes to prep");
+        Recipe steakPie = new Recipe("Easy Steak Pie", 195, 611, "Nothing beats a classic homemade steak pie, complete with golden-brown flaky pastry and a rich filling. This easy family feast only takes 15 minutes to prep", "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/easy-steak-pie-89f7027.jpg");
 
         ////// Instructions ////////
         String step1 = "Nothing beats a classic homemade steak pie, complete with golden-brown flaky pastry and a rich filling. This easy family feast only takes 15 minutes to prep";

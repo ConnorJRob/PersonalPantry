@@ -1,7 +1,6 @@
 package com.personalpantry.example.PersonalPantry.Models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
@@ -28,6 +27,9 @@ public class Recipe {
     @Column
     private String description; //establish description variable as String
 
+    @Column
+    private String imageUrl;
+
     @ElementCollection
     @Column(columnDefinition = "LONGTEXT")
     private List<String> instructions; //establish an ArrayList variable which only takes Strings
@@ -42,11 +44,12 @@ public class Recipe {
     private List<SelectedRecipe> selectedRecipes;
 
     //establish Recipe constructor which takes the properties required for new recipe
-    public Recipe(String name, int readyInMinutes, int caloriesPerServing, String description) {
+    public Recipe(String name, int readyInMinutes, int caloriesPerServing, String description, String imageUrl) {
         this.name = name; //name given when Recipe is created is saved as name
         this.readyInMinutes = readyInMinutes; //readyInMinutes given when Recipe is created is saved as readyInMinutes
         this.caloriesPerServing = caloriesPerServing; //caloriesPerServing given when Recipe is created is saved as caloriesPerServing
         this.description = description; //description given when Recipe is created is saved as description
+        this.imageUrl = imageUrl;
         this.instructions = new ArrayList<>(); // instructions is saved as an empty arrayList
         this.recipeIngredients = new ArrayList<>();
     }
@@ -123,5 +126,13 @@ public class Recipe {
 
     public void setSelectedRecipes(List<SelectedRecipe> selectedRecipes) {
         this.selectedRecipes = selectedRecipes;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }
