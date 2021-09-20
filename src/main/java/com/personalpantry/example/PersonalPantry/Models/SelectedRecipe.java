@@ -23,6 +23,7 @@ public class SelectedRecipe {
     @JoinColumn(name = "recipe_id", nullable = false)
     private Recipe recipe;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "shopping_list_id", nullable = false)
     private ShoppingList shopping_list;
