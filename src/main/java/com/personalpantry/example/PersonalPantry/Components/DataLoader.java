@@ -109,14 +109,15 @@ public class DataLoader implements ApplicationRunner {
         recipeIngredientRepository.save(steakPieEgg);
 
 //        /////// Add RecipeIngredients to Recipe ////////
-//        steakPie.addIngredientToRecipe(steakPieSunflowerOil);
-//        steakPie.addIngredientToRecipe(steakPieSteak);
-//        steakPie.addIngredientToRecipe(steakPieOnion);
-//        steakPie.addIngredientToRecipe(steakPieFlour);
-//        steakPie.addIngredientToRecipe(steakPieKetchup);
-//        steakPie.addIngredientToRecipe(steakPieBeefStockCubes);
-//        steakPie.addIngredientToRecipe(steakPiePuffPastry);
-//        steakPie.addIngredientToRecipe(steakPieEgg);
+        steakPie.addRecipeIngredientToRecipe(steakPieSunflowerOil);
+        steakPie.addRecipeIngredientToRecipe(steakPieSteak);
+        steakPie.addRecipeIngredientToRecipe(steakPieOnion);
+        steakPie.addRecipeIngredientToRecipe(steakPieFlour);
+        steakPie.addRecipeIngredientToRecipe(steakPieKetchup);
+        steakPie.addRecipeIngredientToRecipe(steakPieBeefStockCubes);
+        steakPie.addRecipeIngredientToRecipe(steakPiePuffPastry);
+        steakPie.addRecipeIngredientToRecipe(steakPieEgg);
+        recipeRepository.save(steakPie);
 
 //        /////////       BBQ Chicken Tenders             /////////////
 //
@@ -343,6 +344,14 @@ public class DataLoader implements ApplicationRunner {
 //        grilledSteakWPineappleRice.addIngredientToRecipe(grilledSteakWPineappleRiceCookingSalt);
 //    }
         SelectedRecipe serves4SteakPie = new SelectedRecipe(steakPie, 4, shoppingList);
+        SelectedRecipe serves2SteakPie = new SelectedRecipe(steakPie, 2, shoppingList);
         selectedRecipeRepository.save(serves4SteakPie);
+        selectedRecipeRepository.save(serves2SteakPie);
+        shoppingList.addRecipeToShoppingList(serves2SteakPie);
+        shoppingList.addRecipeToShoppingList(serves4SteakPie);
+        System.out.println(shoppingList.getRecipeList().get(0).getRecipe().getRecipeIngredients().get(0).getIngredient().getName());
+        shoppingList.createShoppingList();
+        System.out.println(shoppingList.getIngredientList().get("Tomato Ketchup"));
+        shoppingListRepository.save(shoppingList);
     }
 }

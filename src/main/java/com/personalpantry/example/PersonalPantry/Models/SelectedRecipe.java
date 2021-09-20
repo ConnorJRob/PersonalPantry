@@ -27,26 +27,22 @@ public class SelectedRecipe {
 
     public SelectedRecipe(Recipe recipe, int desiredServings, ShoppingList shoppingList) {
 //        this.recipe = updatedRecipe(recipe);
-        this.recipe = recipe;
         this.desiredServings = desiredServings;
+        this.recipe = updatedRecipe(recipe);
         this.shopping_list = shoppingList;
     }
 
     public SelectedRecipe(){}
 
-//    public Recipe updatedRecipe(Recipe recipe){
-//        List<RecipeIngredient> ingredientsList = recipe.getIngredients();
-//        for (RecipeIngredient ingredient : ingredientsList){
-//            double newMeasure = ingredient.getMeasure() * desiredServings;
-//            ingredient.setMeasure(newMeasure);
-//        }
-//        return recipe;
-        // get back ArrayList <RI>
-        // for each RI
-        //getMeasure()
-        //measure * desiredServing
-        // RI.setMeasure(newMeasure)
-//    }
+    public Recipe updatedRecipe(Recipe recipe){
+//        Recipe copyOfRecipe = recipe;
+        List<RecipeIngredient> ingredientsList = recipe.getRecipeIngredients();
+        for (RecipeIngredient recipeIngredient : ingredientsList){
+            double newMeasure = recipeIngredient.getMeasure() * desiredServings;
+            recipeIngredient.setMeasure(newMeasure);
+        }
+        return recipe;
+    }
 
     public Long getId() {
         return id;

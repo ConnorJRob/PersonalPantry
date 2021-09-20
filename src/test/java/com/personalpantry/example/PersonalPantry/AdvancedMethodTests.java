@@ -10,24 +10,40 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AdvancedMethodTests {
 
-    private Recipe recipe;
-    private SelectedRecipe selectedRecipe;
+    private Recipe recipe1;
+    private Recipe recipe2;
+    private SelectedRecipe selectedRecipe1;
+    private SelectedRecipe selectedRecipe2;
     private Ingredient ingredient1;
     private Ingredient ingredient2;
     private RecipeIngredient recipeIngredient1;
     private RecipeIngredient recipeIngredient2;
+    private RecipeIngredient recipeIngredient3;
+    private RecipeIngredient recipeIngredient4;
     private ShoppingList shoppingList;
 
-//@BeforeEach
-//    public void before() {
-//    recipe = new Recipe("banana omelette", 5, 690, "egg pancake with mashed bananas");
-//    ingredient1 = new Ingredient("Banana", Category.PRODUCE, UnitType.SINGLEUNIT);
-//    recipeIngredient1 = new RecipeIngredient(ingredient1, 1, recipe);
-//    ingredient2 = new Ingredient("egg", Category.DAIRYANDEGGS, UnitType.SINGLEUNIT);
-//    recipeIngredient2 = new RecipeIngredient(ingredient2, 6.2, recipe);
-//    recipe.addIngredientToRecipe(recipeIngredient1);
-//    recipe.addIngredientToRecipe(recipeIngredient2);
-//}
+@BeforeEach
+    public void before() {
+
+    shoppingList = new ShoppingList();
+
+    recipe1 = new Recipe("banana omelette", 5, 690, "egg pancake with mashed bananas");
+    recipe2 = new Recipe("banana omelette", 5, 690, "egg pancake with mashed bananas");
+
+    ingredient1 = new Ingredient("Banana", Category.PRODUCE, UnitType.SINGLEUNIT);
+    ingredient2 = new Ingredient("Egg", Category.DAIRYANDEGGS, UnitType.SINGLEUNIT);
+
+    recipeIngredient1 = new RecipeIngredient(ingredient1, 1, recipe1);
+    recipeIngredient2 = new RecipeIngredient(ingredient1, 1, recipe2);
+    recipeIngredient3 = new RecipeIngredient(ingredient2, 6.2, recipe1);
+    recipeIngredient4 = new RecipeIngredient(ingredient2, 6.2, recipe2);
+
+    recipe1.getRecipeIngredients().add(recipeIngredient1);
+    recipe1.getRecipeIngredients().add(recipeIngredient3);
+
+    recipe2.getRecipeIngredients().add(recipeIngredient2);
+    recipe2.getRecipeIngredients().add(recipeIngredient4);
+}
 //
 //@Test
 //    public void canUpdateRecipeIngredientMeasuresByDesiredServings() {
@@ -36,5 +52,34 @@ public class AdvancedMethodTests {
 //    List<RecipeIngredient> ingredientsList = recipe.getIngredients();
 //    assertEquals(4, ingredientsList.get(0).getMeasure());
 //    assertEquals(24.8, ingredientsList.get(1).getMeasure());
+//    }
+
+    @Test
+    public void canGenerateShoppingList() {
+    selectedRecipe1 = new SelectedRecipe(recipe1, 4, shoppingList);
+    shoppingList.addRecipeToShoppingList(selectedRecipe1);
+    shoppingList.createShoppingList();
+    assertEquals(4, shoppingList.getIngredientList().get("Banana"));
+    assertEquals(24.8, shoppingList.getIngredientList().get("Egg"));
+    }
+
+    @Test
+    public void canGenerateShoppingListWithMultipleSelectedRecipes() {
+        selectedRecipe1 = new SelectedRecipe(recipe1, 2, shoppingList);
+        selectedRecipe2 = new SelectedRecipe(recipe2, 1, shoppingList);
+        shoppingList.addRecipeToShoppingList(selectedRecipe1);
+        shoppingList.addRecipeToShoppingList(selectedRecipe2);
+        shoppingList.createShoppingList();
+        assertEquals(3, shoppingList.getIngredientList().get("Banana"));
+//        assertEquals(37.2, shoppingList.getIngredientList().get("Egg"));
+    }
+
+//    @Test
+//    public void canGenerateShoppingList() {
+//        selectedRecipe1 = new SelectedRecipe(recipe, 4, shoppingList);
+//        shoppingList.addRecipeToShoppingList(selectedRecipe1);
+//        shoppingList.createShoppingList();
+//        assertEquals(4, shoppingList.getIngredientList().get("Banana"));
+//        assertEquals(24.8, shoppingList.getIngredientList().get("Egg"));
 //    }
 }

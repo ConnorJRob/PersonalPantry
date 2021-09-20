@@ -48,11 +48,12 @@ public class Recipe {
         this.caloriesPerServing = caloriesPerServing; //caloriesPerServing given when Recipe is created is saved as caloriesPerServing
         this.description = description; //description given when Recipe is created is saved as description
         this.instructions = new ArrayList<>(); // instructions is saved as an empty arrayList
+        this.recipeIngredients = new ArrayList<>();
     }
 
     public Recipe(){};
 
-    public void addIngredientToRecipe(RecipeIngredient recipeIngredient){
+    public void addRecipeIngredientToRecipe(RecipeIngredient recipeIngredient){
         recipeIngredients.add(recipeIngredient);
     }
 
