@@ -173,8 +173,8 @@ public class DataLoader implements ApplicationRunner {
 //////        /////////       Pesto Chicken Burgers           /////////////
 //////
 //////        /////// Create Recipe //////
-//        Recipe pestoBurgers = new Recipe("Pesto Chicken Burgers", 40, 709, "Adding pesto into the mix turns the flavour up to eleven, pairing perfectly with gooey mozzarella for an Italian-inspired meal. Serve with a side of roasted sweet potato wedges for a filling dinner that will leave you perfectly satisfied.","https://realfood.tesco.com/media/images/1400x919-Pesto-chicken-burgers-ae343a21-815a-4d8e-b71e-b3cbb1be185e-0-1400x919.jpg");
-//////
+        Recipe pestoBurgers = new Recipe("Pesto Chicken Burgers", 40, 709, "Adding pesto into the mix turns the flavour up to eleven, pairing perfectly with gooey mozzarella for an Italian-inspired meal. Serve with a side of roasted sweet potato wedges for a filling dinner that will leave you perfectly satisfied.","https://realfood.tesco.com/media/images/1400x919-Pesto-chicken-burgers-ae343a21-815a-4d8e-b71e-b3cbb1be185e-0-1400x919.jpg");
+////
 // //        ////// Write Instructions ////////
 //        String pestoBurgersStep1 = "Preheat the oven to gas 6, 200°C, fan 180°C. Tip the sweet potatoes onto a baking tray, season and toss with the oil to coat. Roast on the top shelf for 30-35 mins, turning halfway, until tender.";
 //        String pestoBurgersStep2 = "Meanwhile, put the chicken steaks on a separate tray and bake on the shelf beneath the wedges for 25 mins until crisp. Top the crispy chicken with the mozzarella slices and bake for 5 mins more until the cheese has melted.";
@@ -195,8 +195,8 @@ public class DataLoader implements ApplicationRunner {
 //        Ingredient sweetPotatoes = new Ingredient("Sweet Potatoes", Category.PRODUCE, UnitType.GRAMS);
 //        ingredientRepository.save(sweetPotatoes);
 ////
-//        Ingredient oliveOil = new Ingredient("Olive Oil", Category.OIL, UnitType.MILLILITRES);
-//        ingredientRepository.save(oliveOil);
+        Ingredient oliveOil = new Ingredient("Olive Oil", Category.OIL, UnitType.ML);
+        ingredientRepository.save(oliveOil);
 ////
 //        Ingredient mozzarella = new Ingredient("Reduced-Fat Mozzarella Ball", Category.DAIRYANDEGGS, UnitType.GRAMS);
 //        ingredientRepository.save(mozzarella);
@@ -232,69 +232,91 @@ public class DataLoader implements ApplicationRunner {
 //        pestoBurgers.addRecipeIngredientToRecipe(pestoBurgersRocketLeaves);
 //        recipeRepository.save(pestoBurgers);
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 9a9f1852e04b344c45755442e2fa1fdfc7fd481d
         ////
 
 ////        /////////       Halloumi stuffed peppers           /////////////
 ////
 ////        /////// Create Recipe //////
-////        Recipe halloumiStuffedPeppers = new Recipe("Halloumi Stuffed Peppers", 35, 317, "Whip up these flavoursome veggie delights in no time – perfect for sharing during sunny evenings. Roasting red peppers and cherry tomatoes gives this snack a sweet and tangy base, with the salty halloumi and olives giving a savoury balance. Give this a go and you'll be making it again for sure!");
-////        recipeRepository.save(halloumiStuffedPeppers);
+        Recipe halloumiStuffedPeppers = new Recipe("Halloumi Stuffed Peppers", 35, 317, "Whip up these flavoursome veggie delights in no time – perfect for sharing during sunny evenings. Roasting red peppers and cherry tomatoes gives this snack a sweet and tangy base, with the salty halloumi and olives giving a savoury balance. Give this a go and you'll be making it again for sure!", "https://realfood.tesco.com/media/images/1400x919-Stuffed-peppers-recipe-aaf8c419-903b-4b1b-9839-9916d36a17bc-0-1400x919.jpg");
+        recipeRepository.save(halloumiStuffedPeppers);
+
+        ////        ////// Write Instructions ////////
+        String halloumiStuffedPeppersStep1 = "Preheat the oven to gas 6, 200°C, fan 180°C. Halve the peppers, leaving the stalks intact but removing the core and membrane.";
+        String halloumiStuffedPeppersStep2 = "Rub with 1 tbsp oil and place, cut side down, in a roasting tin. Put the cherry tomatoes in a separate small roasting tin, season and toss in ½ tbsp oil. Roast alongside the peppers for 15 mins.";
+        String halloumiStuffedPeppersStep3 = "Heat the rice to pack instructions. Fork into a bowl and stir in the rest of the ingredients, reserving a little of the halloumi and parsley.";
+        String halloumiStuffedPeppersStep4 = "Fill the pepper halves with the rice mixture and top with the tomatoes and reserved halloumi. Return to the oven for 15-20 mins or until the halloumi is golden. Scatter with the remaining parsley to serve.";
+
+
+////        ////// Add Instructions to Recipe /////////
+        halloumiStuffedPeppers.addRecipeInstruction(halloumiStuffedPeppersStep1);
+        halloumiStuffedPeppers.addRecipeInstruction(halloumiStuffedPeppersStep2);
+        halloumiStuffedPeppers.addRecipeInstruction(halloumiStuffedPeppersStep3);
+        halloumiStuffedPeppers.addRecipeInstruction(halloumiStuffedPeppersStep4);
+////
+        // / Save Recipe to Recipe Repo ////////
+        recipeRepository.save(halloumiStuffedPeppers);
+
+
 ////
 ////        //// Create New Ingredients /////
-////        Ingredient redPepper = new Ingredient("Red Pepper", Category.PRODUCE, UnitType.SINGLEUNIT);
-////        ingredientRepository.save(redPepper);
+        Ingredient redPepper = new Ingredient("Red Pepper", Category.PRODUCE, UnitType.X);
+        ingredientRepository.save(redPepper);
 ////
 ////        // Olive Oil Ingredient already created
 ////
-////        Ingredient cherryTomatoes = new Ingredient("Piccolo Cherry Tomatoes", Category.PRODUCE, UnitType.GRAMS);
-////        ingredientRepository.save(cherryTomatoes);
+        Ingredient cherryTomatoes = new Ingredient("Piccolo Cherry Tomatoes", Category.PRODUCE, UnitType.G);
+        ingredientRepository.save(cherryTomatoes);
+
+        Ingredient pilauRice = new Ingredient("Pilau Rice", Category.ETHNICFOODS, UnitType.G);
+        ingredientRepository.save(pilauRice);
+
+        Ingredient blackOlives = new Ingredient("Black Olives", Category.PRODUCE, UnitType.G);
+        ingredientRepository.save(blackOlives);
+
+        Ingredient sultanas = new Ingredient("Sultanas", Category.DRIEDFRUITS, UnitType.G);
+        ingredientRepository.save(sultanas);
+
+        Ingredient halloumi = new Ingredient("Halloumi", Category.DAIRYANDEGGS, UnitType.G);
+        ingredientRepository.save(halloumi);
+
+        Ingredient freshParsley = new Ingredient("Fresh Parsley", Category.PRODUCE, UnitType.G);
+        ingredientRepository.save(freshParsley);
 ////
-////        Ingredient pilauRice = new Ingredient("Pilau Rice", Category.ETHNICFOODS, UnitType.GRAMS);
-////        ingredientRepository.save(pilauRice);
-////
-////        Ingredient blackOlives = new Ingredient("Black Olives", Category.PRODUCE, UnitType.GRAMS);
-////        ingredientRepository.save(blackOlives);
-////
-////        Ingredient sultanas = new Ingredient("Sultanas", Category.DRIEDFRUITS, UnitType.GRAMS);
-////        ingredientRepository.save(sultanas);
-////
-////        Ingredient halloumi = new Ingredient("Halloumi", Category.DAIRYANDEGGS, UnitType.GRAMS);
-////        ingredientRepository.save(halloumi);
-////
-////        Ingredient freshParsley = new Ingredient("Fresh Parsley", Category.PRODUCE, UnitType.GRAMS);
-////        ingredientRepository.save(freshParsley);
-////
-////        ////// Write Instructions ////////
-////        String halloumiStuffedPeppersStep1 = "Preheat the oven to gas 6, 200°C, fan 180°C. Halve the peppers, leaving the stalks intact but removing the core and membrane.";
-////        String halloumiStuffedPeppersStep2 = "Rub with 1 tbsp oil and place, cut side down, in a roasting tin. Put the cherry tomatoes in a separate small roasting tin, season and toss in ½ tbsp oil. Roast alongside the peppers for 15 mins.";
-////        String halloumiStuffedPeppersStep3 = "Heat the rice to pack instructions. Fork into a bowl and stir in the rest of the ingredients, reserving a little of the halloumi and parsley.";
-////        String halloumiStuffedPeppersStep4 = "Fill the pepper halves with the rice mixture and top with the tomatoes and reserved halloumi. Return to the oven for 15-20 mins or until the halloumi is golden. Scatter with the remaining parsley to serve.";
-////
-////        ////// Add Instructions to Recipe /////////
-////        halloumiStuffedPeppers.addRecipeInstruction(halloumiStuffedPeppersStep1);
-////        halloumiStuffedPeppers.addRecipeInstruction(halloumiStuffedPeppersStep2);
-////        halloumiStuffedPeppers.addRecipeInstruction(halloumiStuffedPeppersStep3);
-////        halloumiStuffedPeppers.addRecipeInstruction(halloumiStuffedPeppersStep4);
-////
+
 ////        /////// Create Recipe Ingredients from Ingredients ////////
-////        RecipeIngredient halloumiStuffedPeppersRedPepper = new RecipeIngredient(redPepper, 1, halloumiStuffedPeppers);
-////        RecipeIngredient halloumiStuffedPeppersOliveOil = new RecipeIngredient(oliveOil, 5.75, halloumiStuffedPeppers);
-////        RecipeIngredient halloumiStuffedPeppersCherryTomatoes = new RecipeIngredient(cherryTomatoes, 55, halloumiStuffedPeppers);
-////        RecipeIngredient halloumiStuffedPeppersPilauRice = new RecipeIngredient(pilauRice, 62.5, halloumiStuffedPeppers);
-////        RecipeIngredient halloumiStuffedPeppersBlackOlives = new RecipeIngredient(blackOlives, 10, halloumiStuffedPeppers);
-////        RecipeIngredient halloumiStuffedPeppersSultanas = new RecipeIngredient(sultanas, 8.75, halloumiStuffedPeppers);
-////        RecipeIngredient halloumiStuffedPeppersHalloumi = new RecipeIngredient(halloumi, 20, halloumiStuffedPeppers);
-////        RecipeIngredient halloumiStuffedPeppersFreshParsley = new RecipeIngredient(freshParsley, 2.5, halloumiStuffedPeppers);
+        RecipeIngredient halloumiStuffedPeppersRedPepper = new RecipeIngredient(redPepper, 1, halloumiStuffedPeppers);
+        recipeIngredientRepository.save(halloumiStuffedPeppersRedPepper);
+        RecipeIngredient halloumiStuffedPeppersOliveOil = new RecipeIngredient(oliveOil, 5.75, halloumiStuffedPeppers);
+        recipeIngredientRepository.save(halloumiStuffedPeppersOliveOil);
+        RecipeIngredient halloumiStuffedPeppersCherryTomatoes = new RecipeIngredient(cherryTomatoes, 55, halloumiStuffedPeppers);
+        recipeIngredientRepository.save(halloumiStuffedPeppersCherryTomatoes);
+        RecipeIngredient halloumiStuffedPeppersPilauRice = new RecipeIngredient(pilauRice, 62.5, halloumiStuffedPeppers);
+        recipeIngredientRepository.save(halloumiStuffedPeppersPilauRice);
+        RecipeIngredient halloumiStuffedPeppersBlackOlives = new RecipeIngredient(blackOlives, 10, halloumiStuffedPeppers);
+        recipeIngredientRepository.save(halloumiStuffedPeppersBlackOlives);
+        RecipeIngredient halloumiStuffedPeppersSultanas = new RecipeIngredient(sultanas, 8.75, halloumiStuffedPeppers);
+        recipeIngredientRepository.save(halloumiStuffedPeppersSultanas);
+        RecipeIngredient halloumiStuffedPeppersHalloumi = new RecipeIngredient(halloumi, 20, halloumiStuffedPeppers);
+        recipeIngredientRepository.save(halloumiStuffedPeppersHalloumi);
+        RecipeIngredient halloumiStuffedPeppersFreshParsley = new RecipeIngredient(freshParsley, 2.5, halloumiStuffedPeppers);
+        recipeIngredientRepository.save(halloumiStuffedPeppersFreshParsley);
 ////
 ////        /////// Add RecipeIngredients to Recipe ////////
-////        halloumiStuffedPeppers.addIngredientToRecipe(halloumiStuffedPeppersRedPepper);
-////        halloumiStuffedPeppers.addIngredientToRecipe(halloumiStuffedPeppersOliveOil);
-////        halloumiStuffedPeppers.addIngredientToRecipe(halloumiStuffedPeppersCherryTomatoes);
-////        halloumiStuffedPeppers.addIngredientToRecipe(halloumiStuffedPeppersPilauRice);
-////        halloumiStuffedPeppers.addIngredientToRecipe(halloumiStuffedPeppersBlackOlives);
-////        halloumiStuffedPeppers.addIngredientToRecipe(halloumiStuffedPeppersSultanas);
-////        halloumiStuffedPeppers.addIngredientToRecipe(halloumiStuffedPeppersHalloumi);
-////        halloumiStuffedPeppers.addIngredientToRecipe(halloumiStuffedPeppersFreshParsley);
+        halloumiStuffedPeppers.addRecipeIngredientToRecipe(halloumiStuffedPeppersRedPepper);
+        halloumiStuffedPeppers.addRecipeIngredientToRecipe(halloumiStuffedPeppersOliveOil);
+        halloumiStuffedPeppers.addRecipeIngredientToRecipe(halloumiStuffedPeppersCherryTomatoes);
+        halloumiStuffedPeppers.addRecipeIngredientToRecipe(halloumiStuffedPeppersPilauRice);
+        halloumiStuffedPeppers.addRecipeIngredientToRecipe(halloumiStuffedPeppersBlackOlives);
+        halloumiStuffedPeppers.addRecipeIngredientToRecipe(halloumiStuffedPeppersSultanas);
+        halloumiStuffedPeppers.addRecipeIngredientToRecipe(halloumiStuffedPeppersHalloumi);
+        halloumiStuffedPeppers.addRecipeIngredientToRecipe(halloumiStuffedPeppersFreshParsley);
+        recipeRepository.save(halloumiStuffedPeppers);
+    }
+}
 ////
 ////        /////////       Grilled Steak with Pineapple Rice         /////////////
 ////

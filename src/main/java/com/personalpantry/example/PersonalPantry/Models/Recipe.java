@@ -24,7 +24,7 @@ public class Recipe {
     @Column(name = "calories_per_serving")
     private int caloriesPerServing; //establish caloriesPerServing variable as Integer
 
-    @Column
+    @Column(columnDefinition = "LONGTEXT")
     private String description; //establish description variable as String
 
     @Column
