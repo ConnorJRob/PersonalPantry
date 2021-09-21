@@ -30,8 +30,8 @@ public class AdvancedMethodTests {
     recipe = new Recipe("banana omelette", 5, 690, "egg pancake with mashed bananas", "URLSTRING");
 //    recipe2 = new Recipe("banana omelette", 5, 690, "egg pancake with mashed bananas");
 
-    ingredient1 = new Ingredient("Banana", Category.PRODUCE, UnitType.SINGLEUNIT);
-    ingredient2 = new Ingredient("Egg", Category.DAIRYANDEGGS, UnitType.SINGLEUNIT);
+    ingredient1 = new Ingredient("Banana", Category.PRODUCE, UnitType.X);
+    ingredient2 = new Ingredient("Egg", Category.DAIRYANDEGGS, UnitType.X);
 
     recipeIngredient1 = new RecipeIngredient(ingredient1, 1, recipe);
 //    recipeIngredient2 = new RecipeIngredient(ingredient1, 1, recipe2);
