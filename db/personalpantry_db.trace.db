@@ -1584,6 +1584,7 @@ Caused by: java.lang.IllegalStateException: The file is locked: nio:/Users/sara/
 	at org.h2.mvstore.FileStore.open(FileStore.java:172)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:381)
 	... 67 more
+<<<<<<< HEAD
 2021-09-21 21:04:52 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLDataException: Value too long for column "DESCRIPTION VARCHAR(255)": "STRINGDECODE('Whip up these flavoursome veggie delights in no time \u2013 perfect for sharing during sunny evenings. Roasting re... (295)"; SQL statement:
 insert into recipes (id, calories_per_serving, description, image_url, name, ready_in_minutes) values (null, ?, ?, ?, ?, ?) [22001-200]
@@ -1592,6 +1593,10 @@ org.h2.jdbc.JdbcSQLDataException: Value too long for column "DESCRIPTION VARCHAR
 insert into recipes (id, calories_per_serving, description, image_url, name, ready_in_minutes) values (null, ?, ?, ?, ?, ?) [22001-200]
 2021-09-21 21:29:47 database: flush
 org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/sara/Desktop/codeclan_work/PersonalPantry/db/personalpantry_db.mv.db [1.4.200/7]" [50000-200]
+=======
+2021-09-21 20:52:40 database: flush
+org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/user/Desktop/finalProject/PersonalPantry/db/personalpantry_db.mv.db [1.4.200/7]" [50000-200]
+>>>>>>> 9a9f1852e04b344c45755442e2fa1fdfc7fd481d
 	at org.h2.message.DbException.get(DbException.java:194)
 	at org.h2.message.DbException.convert(DbException.java:347)
 	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:93)
@@ -1618,6 +1623,7 @@ org.h2.message.DbException: General error: "java.lang.IllegalStateException: The
 	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364)
 	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
 	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
+<<<<<<< HEAD
 	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
 	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
 	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
@@ -1783,6 +1789,34 @@ Caused by: java.lang.IllegalStateException: The file is locked: nio:/Users/sara/
 	... 67 more
 2021-09-21 21:34:04 database: flush
 org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/sara/Desktop/codeclan_work/PersonalPantry/db/personalpantry_db.mv.db [1.4.200/7]" [50000-200]
+=======
+	at com.zaxxer.hikari.pool.HikariPool.access$100(HikariPool.java:71)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:726)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:712)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/user/Desktop/finalProject/PersonalPantry/db/personalpantry_db.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 33 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:/Users/user/Desktop/finalProject/PersonalPantry/db/personalpantry_db.mv.db [1.4.200/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:950)
+	at org.h2.mvstore.FileStore.open(FileStore.java:166)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:381)
+	... 27 more
+Caused by: java.nio.channels.OverlappingFileLockException
+	at java.base/sun.nio.ch.FileLockTable.checkList(FileLockTable.java:229)
+	at java.base/sun.nio.ch.FileLockTable.add(FileLockTable.java:123)
+	at java.base/sun.nio.ch.FileChannelImpl.tryLock(FileChannelImpl.java:1154)
+	at org.h2.store.fs.FileNio.tryLock(FilePathNio.java:121)
+	at java.base/java.nio.channels.FileChannel.tryLock(FileChannel.java:1165)
+	at org.h2.mvstore.FileStore.open(FileStore.java:163)
+	... 28 more
+2021-09-21 20:52:40 database: flush
+org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/user/Desktop/finalProject/PersonalPantry/db/personalpantry_db.mv.db [1.4.200/7]" [50000-200]
+>>>>>>> 9a9f1852e04b344c45755442e2fa1fdfc7fd481d
 	at org.h2.message.DbException.get(DbException.java:194)
 	at org.h2.message.DbException.convert(DbException.java:347)
 	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:93)
@@ -1809,6 +1843,7 @@ org.h2.message.DbException: General error: "java.lang.IllegalStateException: The
 	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364)
 	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
 	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
+<<<<<<< HEAD
 	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
 	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
 	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
@@ -1974,6 +2009,34 @@ Caused by: java.lang.IllegalStateException: The file is locked: nio:/Users/sara/
 	... 67 more
 2021-09-21 21:50:59 database: flush
 org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/sara/Desktop/codeclan_work/PersonalPantry/db/personalpantry_db.mv.db [1.4.200/7]" [50000-200]
+=======
+	at com.zaxxer.hikari.pool.HikariPool.access$100(HikariPool.java:71)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:726)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:712)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/user/Desktop/finalProject/PersonalPantry/db/personalpantry_db.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 33 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:/Users/user/Desktop/finalProject/PersonalPantry/db/personalpantry_db.mv.db [1.4.200/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:950)
+	at org.h2.mvstore.FileStore.open(FileStore.java:166)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:381)
+	... 27 more
+Caused by: java.nio.channels.OverlappingFileLockException
+	at java.base/sun.nio.ch.FileLockTable.checkList(FileLockTable.java:229)
+	at java.base/sun.nio.ch.FileLockTable.add(FileLockTable.java:123)
+	at java.base/sun.nio.ch.FileChannelImpl.tryLock(FileChannelImpl.java:1154)
+	at org.h2.store.fs.FileNio.tryLock(FilePathNio.java:121)
+	at java.base/java.nio.channels.FileChannel.tryLock(FileChannel.java:1165)
+	at org.h2.mvstore.FileStore.open(FileStore.java:163)
+	... 28 more
+2021-09-21 20:54:47 database: flush
+org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/user/Desktop/finalProject/PersonalPantry/db/personalpantry_db.mv.db [1.4.200/7]" [50000-200]
+>>>>>>> 9a9f1852e04b344c45755442e2fa1fdfc7fd481d
 	at org.h2.message.DbException.get(DbException.java:194)
 	at org.h2.message.DbException.convert(DbException.java:347)
 	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:93)
@@ -2000,6 +2063,7 @@ org.h2.message.DbException: General error: "java.lang.IllegalStateException: The
 	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364)
 	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
 	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
+<<<<<<< HEAD
 	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
 	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
 	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
@@ -2165,6 +2229,34 @@ Caused by: java.lang.IllegalStateException: The file is locked: nio:/Users/sara/
 	... 67 more
 2021-09-21 21:51:22 database: flush
 org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/sara/Desktop/codeclan_work/PersonalPantry/db/personalpantry_db.mv.db [1.4.200/7]" [50000-200]
+=======
+	at com.zaxxer.hikari.pool.HikariPool.access$100(HikariPool.java:71)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:726)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:712)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/user/Desktop/finalProject/PersonalPantry/db/personalpantry_db.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 33 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:/Users/user/Desktop/finalProject/PersonalPantry/db/personalpantry_db.mv.db [1.4.200/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:950)
+	at org.h2.mvstore.FileStore.open(FileStore.java:166)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:381)
+	... 27 more
+Caused by: java.nio.channels.OverlappingFileLockException
+	at java.base/sun.nio.ch.FileLockTable.checkList(FileLockTable.java:229)
+	at java.base/sun.nio.ch.FileLockTable.add(FileLockTable.java:123)
+	at java.base/sun.nio.ch.FileChannelImpl.tryLock(FileChannelImpl.java:1154)
+	at org.h2.store.fs.FileNio.tryLock(FilePathNio.java:121)
+	at java.base/java.nio.channels.FileChannel.tryLock(FileChannel.java:1165)
+	at org.h2.mvstore.FileStore.open(FileStore.java:163)
+	... 28 more
+2021-09-21 20:54:47 database: flush
+org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/user/Desktop/finalProject/PersonalPantry/db/personalpantry_db.mv.db [1.4.200/7]" [50000-200]
+>>>>>>> 9a9f1852e04b344c45755442e2fa1fdfc7fd481d
 	at org.h2.message.DbException.get(DbException.java:194)
 	at org.h2.message.DbException.convert(DbException.java:347)
 	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:93)
@@ -2191,6 +2283,7 @@ org.h2.message.DbException: General error: "java.lang.IllegalStateException: The
 	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364)
 	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
 	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
+<<<<<<< HEAD
 	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
 	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
 	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
@@ -2354,3 +2447,29 @@ Caused by: java.lang.IllegalStateException: The file is locked: nio:/Users/sara/
 	at org.h2.mvstore.FileStore.open(FileStore.java:172)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:381)
 	... 67 more
+=======
+	at com.zaxxer.hikari.pool.HikariPool.access$100(HikariPool.java:71)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:726)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:712)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/user/Desktop/finalProject/PersonalPantry/db/personalpantry_db.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 33 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:/Users/user/Desktop/finalProject/PersonalPantry/db/personalpantry_db.mv.db [1.4.200/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:950)
+	at org.h2.mvstore.FileStore.open(FileStore.java:166)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:381)
+	... 27 more
+Caused by: java.nio.channels.OverlappingFileLockException
+	at java.base/sun.nio.ch.FileLockTable.checkList(FileLockTable.java:229)
+	at java.base/sun.nio.ch.FileLockTable.add(FileLockTable.java:123)
+	at java.base/sun.nio.ch.FileChannelImpl.tryLock(FileChannelImpl.java:1154)
+	at org.h2.store.fs.FileNio.tryLock(FilePathNio.java:121)
+	at java.base/java.nio.channels.FileChannel.tryLock(FileChannel.java:1165)
+	at org.h2.mvstore.FileStore.open(FileStore.java:163)
+	... 28 more
+>>>>>>> 9a9f1852e04b344c45755442e2fa1fdfc7fd481d
