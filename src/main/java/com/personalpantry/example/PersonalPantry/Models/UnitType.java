@@ -2,9 +2,9 @@ package com.personalpantry.example.PersonalPantry.Models;
 
 public enum UnitType {
     // each UnityType with a shorthand value.
-    GRAMS("g"),
-    MILLILITRES("ml"),
-    SINGLEUNIT("");
+    G("grams"),
+    ML("millilitres"),
+    X("singleunit");
 //    LITRES("L"),
 //    TABLESPOON("tbsp"),
 //    TEASPOON("tsp"),
