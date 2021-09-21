@@ -49,12 +49,12 @@ public class ShoppingList {
 
                 if(ingredientList.containsKey(entry.getKey())) {
 
-                    double newValue = ingredientList.get(entry.getKey()) + entry.getValue();
+                    double newValue = Math.ceil(ingredientList.get(entry.getKey()) + entry.getValue());
                     ingredientList.replace(entry.getKey(), newValue);
 
                 } else {
 
-                    ingredientList.put(entry.getKey(), entry.getValue());
+                    ingredientList.put(entry.getKey(), Math.ceil(entry.getValue()));
 
                 }
             }
