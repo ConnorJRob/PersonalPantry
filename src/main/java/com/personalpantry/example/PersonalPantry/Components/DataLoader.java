@@ -231,11 +231,6 @@ public class DataLoader implements ApplicationRunner {
 //        pestoBurgers.addRecipeIngredientToRecipe(pestoBurgersPesto);
 //        pestoBurgers.addRecipeIngredientToRecipe(pestoBurgersRocketLeaves);
 //        recipeRepository.save(pestoBurgers);
-
-<<<<<<< HEAD
-
-=======
->>>>>>> 9a9f1852e04b344c45755442e2fa1fdfc7fd481d
         ////
 
 ////        /////////       Halloumi stuffed peppers           /////////////
@@ -315,8 +310,7 @@ public class DataLoader implements ApplicationRunner {
         halloumiStuffedPeppers.addRecipeIngredientToRecipe(halloumiStuffedPeppersHalloumi);
         halloumiStuffedPeppers.addRecipeIngredientToRecipe(halloumiStuffedPeppersFreshParsley);
         recipeRepository.save(halloumiStuffedPeppers);
-    }
-}
+
 ////
 ////        /////////       Grilled Steak with Pineapple Rice         /////////////
 ////
@@ -380,6 +374,7 @@ public class DataLoader implements ApplicationRunner {
 ////        grilledSteakWPineappleRice.addIngredientToRecipe(grilledSteakWPineappleRicePrecookedBrownRice);
 ////        grilledSteakWPineappleRice.addIngredientToRecipe(grilledSteakWPineappleRiceCookingSalt);
 ////    }
+
         SelectedRecipe serves4SteakPie = new SelectedRecipe(steakPie, 4, shoppingList);
         selectedRecipeRepository.save(serves4SteakPie);
         shoppingList.addRecipeToShoppingList(serves4SteakPie);
