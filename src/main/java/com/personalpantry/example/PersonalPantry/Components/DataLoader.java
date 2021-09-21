@@ -72,7 +72,7 @@ public class DataLoader implements ApplicationRunner {
         Ingredient flour = new Ingredient("Flour", Category.BAKING, UnitType.G);
         ingredientRepository.save(flour);
 
-        Ingredient ketchup = new Ingredient("Tomato Ketchup", Category.CONDIMENTS, , UnitType.ML);
+        Ingredient ketchup = new Ingredient("Tomato Ketchup", Category.CONDIMENTS, UnitType.ML);
         ingredientRepository.save(ketchup);
 
         Ingredient beefStockCubes = new Ingredient("Beef Stock Cubes", Category.SPICESANDSEASONINGS, UnitType.X);
@@ -232,11 +232,7 @@ public class DataLoader implements ApplicationRunner {
 //        pestoBurgers.addRecipeIngredientToRecipe(pestoBurgersRocketLeaves);
 //        recipeRepository.save(pestoBurgers);
 
-                }
-                }
-
         ////
-
 
 ////        /////////       Halloumi stuffed peppers           /////////////
 ////
@@ -362,15 +358,17 @@ public class DataLoader implements ApplicationRunner {
 ////        grilledSteakWPineappleRice.addIngredientToRecipe(grilledSteakWPineappleRicePrecookedBrownRice);
 ////        grilledSteakWPineappleRice.addIngredientToRecipe(grilledSteakWPineappleRiceCookingSalt);
 ////    }
-//        SelectedRecipe serves4SteakPie = new SelectedRecipe(steakPie, 4, shoppingList);
-//        SelectedRecipe serves2SteakPie = new SelectedRecipe(steakPie, 2, shoppingList);
-//        selectedRecipeRepository.save(serves4SteakPie);
-//        selectedRecipeRepository.save(serves2SteakPie);
-//        shoppingList.addRecipeToShoppingList(serves2SteakPie);
-//        shoppingList.addRecipeToShoppingList(serves4SteakPie);
-////        System.out.println(shoppingList.getRecipeList().get(0).getRecipe().getRecipeIngredients().get(0).getIngredient().getName());
-//        shoppingList.createShoppingList();
-////        System.out.println(shoppingList.getIngredientList().get("Tomato Ketchup"));
-//        shoppingListRepository.save(shoppingList);
-//    }
+        SelectedRecipe serves4SteakPie = new SelectedRecipe(steakPie, 4, shoppingList);
+        selectedRecipeRepository.save(serves4SteakPie);
+        shoppingList.addRecipeToShoppingList(serves4SteakPie);
+
+        SelectedRecipe serves1ChickenTendies = new SelectedRecipe(bbqChickenTendies, 1, shoppingList);
+        selectedRecipeRepository.save(serves1ChickenTendies);
+        shoppingList.addRecipeToShoppingList(serves1ChickenTendies);
+
+        shoppingList.createShoppingList();
+
+        shoppingListRepository.save(shoppingList);
+    }
+}
 
