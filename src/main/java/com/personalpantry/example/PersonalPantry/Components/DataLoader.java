@@ -72,7 +72,7 @@ public class DataLoader implements ApplicationRunner {
         Ingredient flour = new Ingredient("Flour", Category.BAKING, UnitType.G);
         ingredientRepository.save(flour);
 
-        Ingredient ketchup = new Ingredient("Tomato Ketchup", Category.CONDIMENTS, , UnitType.ML);
+        Ingredient ketchup = new Ingredient("Tomato Ketchup", Category.CONDIMENTS, UnitType.ML);
         ingredientRepository.save(ketchup);
 
         Ingredient beefStockCubes = new Ingredient("Beef Stock Cubes", Category.SPICESANDSEASONINGS, UnitType.X);
