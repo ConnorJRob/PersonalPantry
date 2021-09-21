@@ -60,28 +60,28 @@ public class DataLoader implements ApplicationRunner {
         recipeRepository.save(steakPie);
 
         //// New Ingredients /////
-        Ingredient sunflowerOil = new Ingredient("Sunflower Oil", Category.OIL, UnitType.MILLILITRES);
+        Ingredient sunflowerOil = new Ingredient("Sunflower Oil", Category.OIL, UnitType.ML);
         ingredientRepository.save(sunflowerOil);
 
-        Ingredient steak = new Ingredient("Braising Steak", Category.MEATANDFISH, UnitType.GRAMS);
+        Ingredient steak = new Ingredient("Braising Steak", Category.MEATANDFISH, UnitType.G);
         ingredientRepository.save(steak);
 
-        Ingredient onion = new Ingredient("Onion", Category.PRODUCE, UnitType.SINGLEUNIT);
+        Ingredient onion = new Ingredient("Onion", Category.PRODUCE, UnitType.X);
         ingredientRepository.save(onion);
 
-        Ingredient flour = new Ingredient("Flour", Category.BAKING, UnitType.GRAMS);
+        Ingredient flour = new Ingredient("Flour", Category.BAKING, UnitType.G);
         ingredientRepository.save(flour);
 
-        Ingredient ketchup = new Ingredient("Tomato Ketchup", Category.CONDIMENTS, UnitType.MILLILITRES);
+        Ingredient ketchup = new Ingredient("Tomato Ketchup", Category.CONDIMENTS, , UnitType.ML);
         ingredientRepository.save(ketchup);
 
-        Ingredient beefStockCubes = new Ingredient("Beef Stock Cubes", Category.SPICESANDSEASONINGS, UnitType.SINGLEUNIT);
+        Ingredient beefStockCubes = new Ingredient("Beef Stock Cubes", Category.SPICESANDSEASONINGS, UnitType.X);
         ingredientRepository.save(beefStockCubes);
 
-        Ingredient puffPastry = new Ingredient("Ready-rolled Puff Pastry", Category.BAKING, UnitType.GRAMS);
+        Ingredient puffPastry = new Ingredient("Ready-rolled Puff Pastry", Category.BAKING, UnitType.G);
         ingredientRepository.save(puffPastry);
 
-        Ingredient egg = new Ingredient("Egg Yolk", Category.DAIRYANDEGGS, UnitType.SINGLEUNIT);
+        Ingredient egg = new Ingredient("Egg Yolk", Category.DAIRYANDEGGS, UnitType.X);
         ingredientRepository.save(egg);
 
         /////// Recipe Ingredients ////////
@@ -144,13 +144,13 @@ public class DataLoader implements ApplicationRunner {
         recipeRepository.save(bbqChickenTendies);
 //
 //        //// Create New Ingredients /////
-        Ingredient chickenBreast = new Ingredient("Chicken Breast", Category.MEATANDFISH, UnitType.SINGLEUNIT);
+        Ingredient chickenBreast = new Ingredient("Chicken Breast", Category.MEATANDFISH, UnitType.X);
         ingredientRepository.save(chickenBreast);
 //
-        Ingredient breadCrumbs = new Ingredient("Seasoned Bread Crumbs", Category.BAKING, UnitType.GRAMS);
+        Ingredient breadCrumbs = new Ingredient("Seasoned Bread Crumbs", Category.BAKING, UnitType.G);
         ingredientRepository.save(breadCrumbs);
 //
-        Ingredient bbqSauce = new Ingredient("BBQ Sauce", Category.CONDIMENTS, UnitType.GRAMS);
+        Ingredient bbqSauce = new Ingredient("BBQ Sauce", Category.CONDIMENTS, UnitType.ML);
         ingredientRepository.save(bbqSauce);
 //
 
