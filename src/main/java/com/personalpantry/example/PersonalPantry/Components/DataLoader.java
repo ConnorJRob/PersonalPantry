@@ -85,28 +85,28 @@ public class DataLoader implements ApplicationRunner {
         ingredientRepository.save(egg);
 
         /////// Recipe Ingredients ////////
-        RecipeIngredient steakPieSunflowerOil = new RecipeIngredient(sunflowerOil, 7.5, steakPie);
+        RecipeIngredient steakPieSunflowerOil = new RecipeIngredient(sunflowerOil, 45, steakPie);
         recipeIngredientRepository.save(steakPieSunflowerOil);
 
-        RecipeIngredient steakPieSteak = new RecipeIngredient(steak, 166, steakPie);
+        RecipeIngredient steakPieSteak = new RecipeIngredient(steak, 1000, steakPie);
         recipeIngredientRepository.save(steakPieSteak);
 
-        RecipeIngredient steakPieOnion = new RecipeIngredient(onion, 0.333, steakPie);
+        RecipeIngredient steakPieOnion = new RecipeIngredient(onion, 2, steakPie);
         recipeIngredientRepository.save(steakPieOnion);
 
-        RecipeIngredient steakPieFlour = new RecipeIngredient(flour, 3.8, steakPie);
+        RecipeIngredient steakPieFlour = new RecipeIngredient(flour, 23, steakPie);
         recipeIngredientRepository.save(steakPieFlour);
 
-        RecipeIngredient steakPieKetchup = new RecipeIngredient(ketchup, 2.5, steakPie);
+        RecipeIngredient steakPieKetchup = new RecipeIngredient(ketchup, 15, steakPie);
         recipeIngredientRepository.save(steakPieKetchup);
 
-        RecipeIngredient steakPieBeefStockCubes = new RecipeIngredient(beefStockCubes, 0.333, steakPie);
+        RecipeIngredient steakPieBeefStockCubes = new RecipeIngredient(beefStockCubes, 2, steakPie);
         recipeIngredientRepository.save(steakPieBeefStockCubes);
 
-        RecipeIngredient steakPiePuffPastry = new RecipeIngredient(puffPastry, 62.5, steakPie);
+        RecipeIngredient steakPiePuffPastry = new RecipeIngredient(puffPastry, 375, steakPie);
         recipeIngredientRepository.save(steakPiePuffPastry);
 
-        RecipeIngredient steakPieEgg = new RecipeIngredient(egg, 0.1666, steakPie);
+        RecipeIngredient steakPieEgg = new RecipeIngredient(egg, 1, steakPie);
         recipeIngredientRepository.save(steakPieEgg);
 
 //        /////// Add RecipeIngredients to Recipe ////////
