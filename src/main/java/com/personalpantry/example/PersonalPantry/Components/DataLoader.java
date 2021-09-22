@@ -283,21 +283,21 @@ public class DataLoader implements ApplicationRunner {
 ////
 
 ////        /////// Create Recipe Ingredients from Ingredients ////////
-        RecipeIngredient halloumiStuffedPeppersRedPepper = new RecipeIngredient(redPepper, 1, halloumiStuffedPeppers);
+        RecipeIngredient halloumiStuffedPeppersRedPepper = new RecipeIngredient(redPepper, 4, halloumiStuffedPeppers);
         recipeIngredientRepository.save(halloumiStuffedPeppersRedPepper);
-        RecipeIngredient halloumiStuffedPeppersOliveOil = new RecipeIngredient(oliveOil, 5.75, halloumiStuffedPeppers);
+        RecipeIngredient halloumiStuffedPeppersOliveOil = new RecipeIngredient(oliveOil, 23, halloumiStuffedPeppers);
         recipeIngredientRepository.save(halloumiStuffedPeppersOliveOil);
-        RecipeIngredient halloumiStuffedPeppersCherryTomatoes = new RecipeIngredient(cherryTomatoes, 55, halloumiStuffedPeppers);
+        RecipeIngredient halloumiStuffedPeppersCherryTomatoes = new RecipeIngredient(cherryTomatoes, 220, halloumiStuffedPeppers);
         recipeIngredientRepository.save(halloumiStuffedPeppersCherryTomatoes);
-        RecipeIngredient halloumiStuffedPeppersPilauRice = new RecipeIngredient(pilauRice, 62.5, halloumiStuffedPeppers);
+        RecipeIngredient halloumiStuffedPeppersPilauRice = new RecipeIngredient(pilauRice, 250, halloumiStuffedPeppers);
         recipeIngredientRepository.save(halloumiStuffedPeppersPilauRice);
-        RecipeIngredient halloumiStuffedPeppersBlackOlives = new RecipeIngredient(blackOlives, 10, halloumiStuffedPeppers);
+        RecipeIngredient halloumiStuffedPeppersBlackOlives = new RecipeIngredient(blackOlives, 40, halloumiStuffedPeppers);
         recipeIngredientRepository.save(halloumiStuffedPeppersBlackOlives);
-        RecipeIngredient halloumiStuffedPeppersSultanas = new RecipeIngredient(sultanas, 8.75, halloumiStuffedPeppers);
+        RecipeIngredient halloumiStuffedPeppersSultanas = new RecipeIngredient(sultanas, 35, halloumiStuffedPeppers);
         recipeIngredientRepository.save(halloumiStuffedPeppersSultanas);
-        RecipeIngredient halloumiStuffedPeppersHalloumi = new RecipeIngredient(halloumi, 20, halloumiStuffedPeppers);
+        RecipeIngredient halloumiStuffedPeppersHalloumi = new RecipeIngredient(halloumi, 80, halloumiStuffedPeppers);
         recipeIngredientRepository.save(halloumiStuffedPeppersHalloumi);
-        RecipeIngredient halloumiStuffedPeppersFreshParsley = new RecipeIngredient(freshParsley, 2.5, halloumiStuffedPeppers);
+        RecipeIngredient halloumiStuffedPeppersFreshParsley = new RecipeIngredient(freshParsley, 10, halloumiStuffedPeppers);
         recipeIngredientRepository.save(halloumiStuffedPeppersFreshParsley);
 ////
 ////        /////// Add RecipeIngredients to Recipe ////////
