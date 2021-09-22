@@ -53,7 +53,7 @@ public class SelectedRecipe {
         for (RecipeIngredient recipeIngredient : ingredientsList){
 
             double newMeasure = recipeIngredient.getMeasure() * desiredServings;
-            instanceMap.put(recipeIngredient.getIngredient().getName(), newMeasure);
+            instanceMap.put(recipeIngredient.getIngredient().getUnitType().toString().toLowerCase() + " " + recipeIngredient.getIngredient().getName(), newMeasure);
 
         }
         return instanceMap;
