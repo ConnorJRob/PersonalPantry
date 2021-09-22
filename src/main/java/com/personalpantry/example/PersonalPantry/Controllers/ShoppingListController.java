@@ -20,12 +20,12 @@ public class ShoppingListController {
     ShoppingListRepository shoppingListRepository;
 
     @GetMapping(value = "/shoppingLists")
-    public ResponseEntity <List<ShoppingList>>getAllShoppingLists(){
+    public ResponseEntity <List<ShoppingList>> getAllShoppingLists(){
         return new ResponseEntity<>(shoppingListRepository.findAll(), HttpStatus.OK);
     }
 
     @GetMapping(value = "/shoppingLists/{id}")
-    public ResponseEntity<Optional<ShoppingList>> getRecipe(@PathVariable Long id){
+    public ResponseEntity<Optional<ShoppingList>> getShoppingList(@PathVariable Long id){
         return new ResponseEntity<>(shoppingListRepository.findById(id), HttpStatus.OK);
     }
 }

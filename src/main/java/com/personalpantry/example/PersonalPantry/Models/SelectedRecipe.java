@@ -2,6 +2,7 @@ package com.personalpantry.example.PersonalPantry.Models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.util.HashMap;
@@ -23,10 +24,10 @@ public class SelectedRecipe {
     @JoinColumn(name = "recipe_id", nullable = false)
     private Recipe recipe;
 
-    @JsonIgnore
+    @JsonIgnoreProperties(value = "recipeList")
     @ManyToOne
     @JoinColumn(name = "shopping_list_id", nullable = false)
-    private ShoppingList shopping_list;
+    private ShoppingList shoppingList;
 
     @ElementCollection
     @CollectionTable(name = "updated_measures", joinColumns = {@JoinColumn(name = "selected_recipe_id", referencedColumnName = "id")})
@@ -38,7 +39,7 @@ public class SelectedRecipe {
 //        this.recipe = updatedRecipe(recipe);
         this.desiredServings = desiredServings;
         this.recipe = recipe;
-        this.shopping_list = shoppingList;
+        this.shoppingList = shoppingList;
 //        this.updatedMeasuresMap = new HashMap<>();
         this.updatedMeasuresMap = updatedRecipe(recipe);
     }
@@ -54,7 +55,6 @@ public class SelectedRecipe {
 
             double newMeasure = recipeIngredient.getMeasure() * desiredServings;
             instanceMap.put(recipeIngredient.getIngredient().getUnitType().toString().toLowerCase() + " " + recipeIngredient.getIngredient().getName(), newMeasure);
-
         }
         return instanceMap;
     }
@@ -101,12 +101,12 @@ public class SelectedRecipe {
         this.recipe = recipe;
     }
 
-    public ShoppingList getShopping_list() {
-        return shopping_list;
+    public ShoppingList getShoppingList() {
+        return shoppingList;
     }
 
-    public void setShopping_list(ShoppingList shopping_list) {
-        this.shopping_list = shopping_list;
+    public void setShoppingList(ShoppingList shoppingList) {
+        this.shoppingList = shoppingList;
     }
 
     public Map<String, Double> getUpdatedMeasuresMap() {

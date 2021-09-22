@@ -19,7 +19,7 @@ public class ShoppingList {
 
     @JsonIgnoreProperties(value = "shopping_list")
     @Cascade(org.hibernate.annotations.CascadeType.DELETE)
-    @OneToMany(mappedBy = "shopping_list", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "shoppingList", fetch = FetchType.LAZY)
     private List<SelectedRecipe> recipeList;
 
 //    @ElementCollection
@@ -55,7 +55,6 @@ public class ShoppingList {
                 } else {
 
                     ingredientList.put(entry.getKey(), Math.ceil(entry.getValue()));
-
                 }
             }
         }
