@@ -375,17 +375,17 @@ public class DataLoader implements ApplicationRunner {
 ////        grilledSteakWPineappleRice.addIngredientToRecipe(grilledSteakWPineappleRiceCookingSalt);
 ////    }
 
-        SelectedRecipe serves4SteakPie = new SelectedRecipe(steakPie, 4, shoppingList);
-        selectedRecipeRepository.save(serves4SteakPie);
-        shoppingList.addRecipeToShoppingList(serves4SteakPie);
-
-        SelectedRecipe serves1ChickenTendies = new SelectedRecipe(bbqChickenTendies, 1, shoppingList);
-        selectedRecipeRepository.save(serves1ChickenTendies);
-        shoppingList.addRecipeToShoppingList(serves1ChickenTendies);
-
-        shoppingList.createShoppingList();
-
-        shoppingListRepository.save(shoppingList);
+//        SelectedRecipe serves4SteakPie = new SelectedRecipe(steakPie, 4, shoppingList);
+//        selectedRecipeRepository.save(serves4SteakPie);
+//        shoppingList.addRecipeToShoppingList(serves4SteakPie);
+//
+//        SelectedRecipe serves1ChickenTendies = new SelectedRecipe(bbqChickenTendies, 1, shoppingList);
+//        selectedRecipeRepository.save(serves1ChickenTendies);
+//        shoppingList.addRecipeToShoppingList(serves1ChickenTendies);
+//
+//        shoppingList.createShoppingList();
+//
+//        shoppingListRepository.save(shoppingList);
     }
 }
 
